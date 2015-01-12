@@ -1,0 +1,5 @@
+/vendor/
+/node_modules/
+/build/
+/application/
+.DS_Store
