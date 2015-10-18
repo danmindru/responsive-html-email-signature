@@ -119,6 +119,12 @@ a{
   align:left;
 }
 
+.footer__main a > span{
+  /* Revert apple blue-link style. */
+  color: #888!important;
+  text-decoration:none!important;
+}
+
 .footer__main__col2{
   /* @todo gulp-inline-css can't use width in percentages */
   width:20%;
