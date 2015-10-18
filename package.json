@@ -1,0 +1,33 @@
+{
+  "name": "responsive-html-email-signature",
+  "version": "2.1.0",
+  "description": "Responsive template for email signatures",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fadeit/responsive-html-email-signature.git"
+  },
+  "keywords": [
+    "responsive",
+    "template",
+    "email",
+    "signature"
+  ],
+  "author": "Dan Mindru <mindrudan@gmail.com> (http://mindrudan.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fadeit/responsive-html-email-signature/issues"
+  },
+  "homepage": "https://github.com/fadeit/responsive-html-email-signature#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-inline-css": "^3.0.0",
+    "gulp-minify-html": "^1.0.4",
+    "gulp-preprocess": "^1.2.0",
+    "run-sequence": "^1.1.4",
+    "wrench": "^1.5.8"
+  }
+}

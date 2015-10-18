@@ -3,3 +3,4 @@
 /build/
 /application/
 .DS_Store
+/dist/
