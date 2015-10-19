@@ -9,8 +9,8 @@ When you need some basic signatures that work on mobile.<br/>
 ## Preview
 Here's how the samples look:
 
-![responsive template example](http://danmind.ru/img/mail/responsive-email-templates1.png)
-![responsive template example](http://danmind.ru/img/mail/responsive-email-templates2.png)
+![responsive emails-01](https://cloud.githubusercontent.com/assets/1515742/10591900/13889d32-76b9-11e5-8dc0-b89d80189e93.png)
+![responsive emails-02](https://cloud.githubusercontent.com/assets/1515742/10591901/139c4954-76b9-11e5-80f7-5b0ccaf5af81.png)
 
 
 ## What does it do
