@@ -33,11 +33,12 @@ Here's how the samples look:
 
 
 ## Getting started
-Take a look at `src/fadeit/` for an example. Copy / Paste, rename it and change `src/fadeit/conf.js` to suite your needs. Run `gulp` to build the templates (into `/dist`). The gulp task will watch HTML & CSS files by default.
-
 ```
+$ npm install
 $ gulp
 ```
+
+Take a look at `src/fadeit/` for an example. Copy / Paste, rename it and change `src/fadeit/conf.js` to suite your needs. Run `gulp` to build the templates (into `/dist`). The gulp task will watch HTML & CSS files by default.
 
 
 ## CSS Support
