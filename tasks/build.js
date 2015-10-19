@@ -5,39 +5,47 @@ var gulp = require('gulp'),
     minifyHTML = require('gulp-minify-html'),
     preprocess = require('gulp-preprocess'),
     rename = require('gulp-rename'),
-    wrench = require('wrench');
+    wrench = require('wrench'),
+    Q = require('q'),
+    del = require('del');
 
 function buildTask(options){
-  gulp.task('build', function() {
+  gulp.task('build', function(cb) {
+    var promises = []
 
-    wrench.readdirSyncRecursive('./src').filter(function(file) {
-      return (!file.match('/') && !file.match(/^\.+/g)) ? file : false
-    }).forEach(function(dir){
-      var confPath = './../' + options.src + '/' + dir + '/conf.js'
-      makeTemplates(dir, require(confPath));
-    });
-
-    function makeTemplates(dir, confItems){
-      confItems.forEach(function(item){
-        gulp.src([options.src + '/' + dir + '/**/*.html', '!' + options.src + '/**/*.inc.html'])
-        .pipe(preprocess({
-          context: item
-        }))
-        .pipe(inlineCss({
-          applyTableAttributes: true,
-          applyWidthAttributes: true,
-          preserveMediaQueries: true,
-          removeStyleTags: false
-        }))
-        .pipe(minifyHTML({quotes: true}))
-        .pipe(rename(function rename(path){
-          path.dirname = dir;
-          path.basename += '-' + item.id;
-          return path;
-        }))
-        .pipe(gulp.dest('./dist/'));
+    del(options.dist).then(function(){
+      wrench.readdirSyncRecursive(options.src).filter(function(file) {
+        return (!file.match('/') && !file.match(/^\.+/g)) ? file : false
+      }).forEach(function(dir){
+        var confPath = './../' + options.src + '/' + dir + '/conf.js';
+        delete require.cache[require.resolve(confPath)]
+        promises.push(makeTemplates(dir, require(confPath)));
       });
-    }
+
+      function makeTemplates(dir, confItems){
+        confItems.forEach(function(item){
+          gulp.src([options.src + '/' + dir + '/**/*.html', '!' + options.src + '/**/*.inc.html'])
+          .pipe(preprocess({
+            context: item
+          }))
+          .pipe(inlineCss({
+            applyTableAttributes: true,
+            applyWidthAttributes: true,
+            preserveMediaQueries: true,
+            removeStyleTags: false
+          }))
+          .pipe(minifyHTML({quotes: true}))
+          .pipe(rename(function rename(path){
+            path.dirname = dir;
+            path.basename += '-' + item.id;
+            return path;
+          }))
+          .pipe(gulp.dest(options.dist));
+        });
+      }
+
+      Q.all(promises).then(function(){ cb(); });
+    });
   });
 }
 
