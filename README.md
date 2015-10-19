@@ -74,3 +74,13 @@ You can also open the HTML files in `/dist` in a browser, CMD + A, CMD + C and t
 
 
 If you are using iCloud drive or having problems with it, you might also want to check [http://matt.coneybeare.me/how-to-make-an-html-signature-in-apple-mail-for-el-capitan-os-x-10-dot-11/](this article).
+
+
+===================
+<br/>
+<a href="http:fadeit.dk"><img src="http://fadeit.dk/src/assets/img/brand/fadeit_logo_full.svg" alt="The fadeit logo" style="width:200px;"/></a><br/><br/>
+
+####About fadeit
+We love and are really good at designing &amp; developing beautiful software, web and mobile applications.
+
+See more at [fadeit.dk](http://fadeit.dk)
