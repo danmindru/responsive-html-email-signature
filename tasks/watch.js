@@ -3,9 +3,8 @@
 var gulp = require('gulp');
 
 function watchTask(options){
-  //@todo watch CSS
   gulp.task('watch', function(){
-    gulp.watch([options.src + '/**/*.html'], ['build']);
+    gulp.watch([options.src + '/**/*.html', options.src + '/**/*.css'], ['build']);
   });
 };
 
