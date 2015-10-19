@@ -10,14 +10,16 @@ When you need some basic signatures that work on mobile.<br/>
 ## Preview
 Here's how the samples look:
 
-![Fadeit desktop](http://danmind.ru/img/fadeit-desktop.png) <br/>
-![Fadeit mobile](http://danmind.ru/img/fadeit-mobile.png)
+![](http://danmind.ru/img/fadeit-desktop.png)
 
-![Play desktop](http://danmind.ru/img/play-desktop.png) <br/>
-![Play mobile](http://danmind.ru/img/play-mobile.png)
+![](http://danmind.ru/img/fadeit-mobile.png)
+
+![](http://danmind.ru/img/play-desktop.png)
+
+![](http://danmind.ru/img/play-mobile.png)
 
 
-## What does it do (checklist)
+## What does it do
 - [x] config-based template generation
 - [x] allows generating multiple templates (for your colleagues too!)
 - [x] transforms linked (`<link>`) CSS into inline styles
