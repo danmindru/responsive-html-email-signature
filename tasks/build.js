@@ -8,7 +8,7 @@ var gulp = require('gulp'),
 function buildTask(options){
   gulp.task('build', function() {
 
-    gulp.src('./src/**/*.html')
+    gulp.src(['./src/**/*.html', '!./src/**/head.html'])
       .pipe(preprocess({
         context: {
           signature: 'Med venlig hilsen / best regards,',
