@@ -1,6 +1,5 @@
-# Responsive HTML email signatures
-Responsive templates for email signatures. <br/>
-**Disclaimer**: super basic layout, but there's nothing basic about HTML emails.
+# Responsive HTML mail signatures
+Responsive templates for mail signatures. <br/>
 
 When you need some basic signatures that work on mobile.<br/>
 ...and your colleagues need them too.<br/>
@@ -10,13 +9,8 @@ When you need some basic signatures that work on mobile.<br/>
 ## Preview
 Here's how the samples look:
 
-![](http://danmind.ru/img/fadeit-desktop.png)
-
-![](http://danmind.ru/img/fadeit-mobile.png)
-
-![](http://danmind.ru/img/play-desktop.png)
-
-![](http://danmind.ru/img/play-mobile.png)
+![responsive template example](http://danmind.ru/img/mail/responsive-email-templates1.png)
+![responsive template example](http://danmind.ru/img/mail/responsive-email-templates2.png)
 
 
 ## What does it do
@@ -25,11 +19,11 @@ Here's how the samples look:
 - [x] transforms linked (`<link>`) CSS into inline styles
 - [x] embeds local `img[src]` into the template (base64).*
 - [x] minifies the template
-- [x] media queries for email clients that support them
+- [x] media queries for mail clients that support them
 - [x] can build templates from multiple sources
 - [x] watches HTML/CSS files for changes and re-builds
 
-<small>** *Some email clients don't support them, so an external URL might be a good idea. **</small>
+<small>** *Some mail clients don't support them, so an external URL might be a good idea. **</small>
 
 
 ## Getting started
@@ -42,15 +36,15 @@ Take a look at `src/fadeit/` for an example. Copy / Paste, rename it and change 
 
 
 ## CSS Support
-Remember, it's HTML emails, so you need to check a big-ass table to find out nothing's gonna work.
+Remember, it's HTML mails, so you need to check a big-ass table to find out nothing's gonna work.
 See [this](https://www.campaignmonitor.com/css/). To convert CSS files to inline styles [gulp-inline-css](https://www.npmjs.com/package/gulp-inline-css) is being used.
 
 
 ## TODO
-- [] closing `inline-css` issue [#8](https://github.com/jonkemp/inline-css/issues/8#issuecomment-149025428) would greatly improve this repo
-- [] preprocessor support (simplifies BEM)
-- [] use github pages to show live demos
-- [] fix all email clients
+- [ ] closing `inline-css` issue [#8](https://github.com/jonkemp/inline-css/issues/8#issuecomment-149025428) would greatly improve this repo
+- [ ] preprocessor support (simplifies BEM)
+- [ ] use github pages to show live demos
+- [ ] fix all mail clients
 
 
 ## Usage with different e-mail clients
