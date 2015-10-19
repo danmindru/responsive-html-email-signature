@@ -1,6 +1,6 @@
 {
   "name": "responsive-html-email-signature",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Responsive template for email signatures",
   "main": "index.js",
   "scripts": {
