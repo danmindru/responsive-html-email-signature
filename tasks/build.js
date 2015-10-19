@@ -7,7 +7,8 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     wrench = require('wrench'),
     Q = require('q'),
-    del = require('del');
+    del = require('del'),
+    inlineimg = require('gulp-inline-image-html');
 
 function buildTask(options){
   gulp.task('build', function(cb) {
@@ -24,10 +25,13 @@ function buildTask(options){
 
       function makeTemplates(dir, confItems){
         confItems.forEach(function(item){
-          gulp.src([options.src + '/' + dir + '/**/*.html', '!' + options.src + '/**/*.inc.html'])
+          var cwd = options.src + '/' + dir;
+
+          gulp.src([cwd + '/**/*.html', '!' + cwd + '/**/*.inc.html'])
           .pipe(preprocess({
             context: item
           }))
+          .pipe(inlineimg(cwd))
           .pipe(inlineCss({
             applyTableAttributes: true,
             applyWidthAttributes: true,

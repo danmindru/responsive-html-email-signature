@@ -5,10 +5,20 @@
  * 1. Common styles for general table things.
  * =====================================
  */
+img {
+  max-width: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+}
+
 tr{
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   box-sizing: border-box;
   font-size: 14px;
+  line-height: 22px;
 }
 
 .main{
@@ -31,9 +41,15 @@ tr{
 }
 
 .sp{
-  /* Separator tr */
+  /* sp -> space, Separator tr */
   /* @todo gulp-inline-css doesn't add height attrs */
   height: 30px;
+}
+
+.spd{
+  /* spd -> space - double, Separator tr */
+  /* @todo gulp-inline-css doesn't add height attrs */
+  height: 60px;
 }
 
 .gray-hr{
@@ -76,20 +92,24 @@ a{
  */
 .footer{
   /* @todo gulp-inline-css doesn't parse background-color -> bgcolor */
-  background-color: #f5f5f5;
+  background-color: #303030;
   padding: 20px 30px 0px 30px;
-  color: #888;
-  border-top: 8px solid #EAEAEA;
+  color: #f5f5f5;
+  border-top: 8px solid #585858;
 }
 
 .footer a{
-  color: #888;
+  color: #f5f5f5;
 }
 
 .footer--simple{
   padding-bottom: 20px;
   /* @todo gulp-inline-css doesn't parse background-color -> bgcolor */
   background-color: #FFFFFF;
+}
+
+.footer--simple tr td{
+  color: #888;
 }
 
 .footer__main{
@@ -100,7 +120,7 @@ a{
 
 .footer__main__signature{
   font-size: 14px;
-  color: #888;
+  color: #f5f5f5;
   /* @todo gulp-inline-css doesn't parse align */
   align:left;
 }
@@ -108,21 +128,26 @@ a{
 .footer__main__col1{
   /* @todo gulp-inline-css can't use width in percentages */
   width:70%;
-  margin-bottom:30px;
+  margin-bottom:40px;
   /* @todo gulp-inline-css doesn't parse align */
   align:left;
 }
 
 .footer__main__col1__td{
-  font-size: 14px;
-  color: #888;
+  color: #9E9E9E;
   /* @todo gulp-inline-css doesn't parse align */
   align:left;
+  padding-top: 15px;
+}
+
+.footer__main__col1__td > span{
+  font-size:18px;
+  margin-bottom:5px;
 }
 
 .footer__main a > span{
   /* Revert apple blue-link style. */
-  color: #888!important;
+  color: #f5f5f5!important;
   text-decoration:none!important;
 }
 
@@ -135,13 +160,15 @@ a{
 
 .footer__main__col2__td{
   font-size: 14px;
-  color: #888;
+  color: #f5f5f5;
+  /* @todo gulp-inline-css doesn't parse align */
+  align:right;
 }
 
 .footer__main__col2__td__img{
   border: 0;
-  padding-left:10px;
+  padding-left:20px;
   max-width: 100%;
-  max-height:38px;
+  max-height:65px;
   height: auto;
 }

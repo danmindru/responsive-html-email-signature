@@ -5,10 +5,20 @@
  * 1. Common styles for general table things.
  * =====================================
  */
+img {
+  max-width: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+}
+
 tr{
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   box-sizing: border-box;
   font-size: 14px;
+  line-height: 20px;
 }
 
 .main{
@@ -136,10 +146,13 @@ a{
 .footer__main__col2__td{
   font-size: 14px;
   color: #888;
+  /* @todo gulp-inline-css doesn't parse align */
+  align:right;
 }
 
 .footer__main__col2__td__img{
   border: 0;
+  padding-top: 6px;
   padding-left:10px;
   max-width: 100%;
   max-height:38px;

@@ -4,25 +4,26 @@
 <meta name="viewport" content="width=device-width" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <!-- Solving https://github.com/jonkemp/inline-css/issues/8 would make things nicer. -->
-<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="play.css">
 </head>
 
 <style type="text/css">
-  img {
-  max-width: 100%;
-  }
-
-  body {
-  -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; width: 100% !important; height: 100%; line-height: 1.4em;
-  }
-
-  @media only screen and (max-width:480px){
+  /* Responsive stuff goes here (inline css doesn't know what to do with it). */
+  @media only screen and (max-width:560px){
     .footer td{
       font-size: 12px!important;
     }
 
     .footer__main__col1{
       width: 100%!important;
+    }
+
+    .footer__main__col1__td{
+      text-align: left;
+    }
+
+    .footer__main__col1__td > span{
+      margin-bottom:10px;
     }
 
     .footer__main__col2{
