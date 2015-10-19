@@ -57,16 +57,16 @@ There are several Thunderbird plugins which can automatically insert signatures 
 
 
 ### Apple Mail / OS X (oh boy)
-1. Open Mail.app and go to `Mail` -> `Preferences` -> `Signatures`
-2. Create a new signature and write some placeholder text (doesn't matter what it is, but you have to identify it later).
-3. Close Mail.app.
-4. Open terminal, then open the signature files using TextEdit (might be different for iCloud drive check the article below).
+- Open Mail.app and go to `Mail` -> `Preferences` -> `Signatures`
+- Create a new signature and write some placeholder text (doesn't matter what it is, but you have to identify it later).
+- Close Mail.app.
+- Open terminal, then open the signature files using TextEdit (might be different for iCloud drive check the article below).
 ```
-$ open -a TextEdit ~/Library/Mobile\ Documents/com~apple~mail/Data/V3/MailData/Signatures/ubiquitous_*.mailsignature`
+$ open -a TextEdit ~/Library/Mobile\ Documents/com~apple~mail/Data/V3/MailData/Signatures/ubiquitous_-mailsignature`
 ```
-5. Keep the file with the placeholder open, close the other ones.
-6. Replace the `<body>...</body>` and it's contents with the template of your choice. *Don't remove the meta information at the top!*
-7. Open Mail.app and compose a new mail. Select the signature from the list to test it out.
+- Keep the file with the placeholder open, close the other ones.
+- Replace the `<body>...</body>` and it's contents with the template of your choice. *Don't remove the meta information at the top!*
+- Open Mail.app and compose a new mail. Select the signature from the list to test it out.
 
 **NB**: Images won't appear in the signature preview, but will work fine when you compose a message.
 
