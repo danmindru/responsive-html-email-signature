@@ -1,4 +1,5 @@
 # Responsive HTML mail signatures
+### Let's punch email clients in the stomach!
 Responsive templates for mail signatures. <br/>
 
 When you need some basic signatures that work on mobile.<br/>
@@ -34,6 +35,10 @@ $ gulp
 ```
 
 Take a look at `src/fadeit/` for an example. Copy / Paste, rename it and change `src/fadeit/conf.js` to suite your needs. Run `gulp` to build the templates (into `/dist`). The gulp task will watch HTML & CSS files by default.
+
+## Overview
+This diagram shows what happens to your templates.
+![Responsive HTML email template/signatures diagram](http://fadeit.dk/posts/html-emails-and-email-signatures-how-hard-can-it-be/html-responsive-email-template-build-diagram.png)
 
 
 ## CSS Support
