@@ -55,6 +55,8 @@ There are several Thunderbird plugins which can automatically insert signatures 
 
 
 ### Apple Mail / OS X (oh boy)
+
+#### Solution 1
 - Open Mail.app and go to `Mail` -> `Preferences` -> `Signatures`
 - Create a new signature and write some placeholder text (doesn't matter what it is, but you have to identify it later).
 - Close Mail.app.
@@ -69,12 +71,24 @@ $ open -a TextEdit ~/Library/Mobile\ Documents/com~apple~mail/Data/V3/MailData/S
 **NB**: Images won't appear in the signature preview, but will work fine when you compose a message.
 
 
-
-
+####Solution 2
 You can also open the HTML files in `/dist` in a browser, CMD + A, CMD + C and then paste into the signature box. This won't copy the `<html>` part or the `<style>` part that includes media queries. Follow the guide if you want it.
 
 
-If you are using iCloud drive or having problems with it, you might also want to check [http://matt.coneybeare.me/how-to-make-an-html-signature-in-apple-mail-for-el-capitan-os-x-10-dot-11/](this article).
+#### Troubleshooting
+
+If solution #1 doesn't work, you can repeat the steps and lock the signature files before you open Mail.app again.
+Lock Files:
+```
+$ chflags uchg ~/Library/Mail/V3/MailData/Signatures/*.mailsignature
+```
+
+If you want to do changes later, you have to unlock the files:
+```
+$ chflags nouchg ~/Library/Mail/V3/MailData/Signatures/*.mailsignature
+```
+
+If you are using iCloud drive or having problems with it, you might also want to check [this article](http://matt.coneybeare.me/how-to-make-an-html-signature-in-apple-mail-for-el-capitan-os-x-10-dot-11/).
 
 
 ===================
