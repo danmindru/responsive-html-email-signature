@@ -23,7 +23,8 @@ Here's how the samples look:
 - [x] can build templates from multiple sources
 - [x] watches HTML/CSS files for changes and re-builds
 
-<small>** *Some mail clients don't support them, so an external URL might be a good idea. **</small>
+
+**Some mail clients don't support them, so an external URL might be a good idea.*
 
 
 ## Getting started
@@ -59,7 +60,7 @@ There are several Thunderbird plugins which can automatically insert signatures 
 - Close Mail.app.
 - Open terminal, then open the signature files using TextEdit (might be different for iCloud drive check the article below).
 ```
-$ open -a TextEdit ~/Library/Mobile\ Documents/com~apple~mail/Data/V3/MailData/Signatures/ubiquitous_-mailsignature`
+$ open -a TextEdit ~/Library/Mobile\ Documents/com~apple~mail/Data/V3/MailData/Signatures/ubiquitous_*.mailsignature
 ```
 - Keep the file with the placeholder open, close the other ones.
 - Replace the `<body>...</body>` and it's contents with the template of your choice. *Don't remove the meta information at the top!*
