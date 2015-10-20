@@ -3,6 +3,7 @@
 var gulp = require('gulp'),
     inlineCss = require('gulp-inline-css'),
     minifyHTML = require('gulp-minify-html'),
+    minifyInline = require('gulp-minify-inline'),
     preprocess = require('gulp-preprocess'),
     rename = require('gulp-rename'),
     wrench = require('wrench'),
@@ -39,6 +40,7 @@ function buildTask(options){
             removeStyleTags: false
           }))
           .pipe(minifyHTML({quotes: true}))
+          .pipe(minifyInline())
           .pipe(rename(function rename(path){
             path.dirname = dir;
             path.basename += '-' + item.id;
