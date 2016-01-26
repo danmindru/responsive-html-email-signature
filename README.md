@@ -6,12 +6,15 @@ When you need some basic signatures that work on mobile.<br/>
 ...and your colleagues need them too.<br/>
 ...but you don't want to deal with tables and inline styles.
 
-
 ## Preview
 Here's how the samples look:
 
 ![responsive emails-01](https://cloud.githubusercontent.com/assets/1515742/10591900/13889d32-76b9-11e5-8dc0-b89d80189e93.png)
 ![responsive emails-02](https://cloud.githubusercontent.com/assets/1515742/10591901/139c4954-76b9-11e5-80f7-5b0ccaf5af81.png)
+
+## Motivation
+Let's make writing HTML emails & email signatures easier. We won't fix all email clients, but we can surely make the process of satisfying them a tad nicer. <br/>
+See a fairly comprehensive rant on the subject (and not only) [in this article](http://fadeit.dk/blog/post/html-emails-and-email-signatures-how-hard-can-it-be).
 
 
 ## What does it do
@@ -47,10 +50,10 @@ See [this](https://www.campaignmonitor.com/css/). To convert CSS files to inline
 
 
 ## TODO
-- [ ] closing `inline-css` issue [#8](https://github.com/jonkemp/inline-css/issues/8#issuecomment-149025428) would greatly improve this repo
+- [x] closing `inline-css` issue [#8](https://github.com/jonkemp/inline-css/issues/8#issuecomment-149025428) would greatly improve this repo
 - [ ] preprocessor support (simplifies BEM)
 - [ ] use github pages to show live demos
-- [ ] fix all mail clients
+- [ ] check [gulp-inline-css](https://github.com/jonkemp/inline-css) for new features
 
 
 ## Usage with different e-mail clients
