@@ -46,11 +46,11 @@ This diagram shows what happens to your templates.
 
 ## CSS Support
 Remember, it's HTML mails, so you need to check a big-ass table to find out nothing's gonna work.
-See [this](https://www.campaignmonitor.com/css/). To convert CSS files to inline styles [gulp-inline-css](https://www.npmjs.com/package/gulp-inline-css) is being used.
+See [this](https://www.campaignmonitor.com/css/). Still [gulp-inline-css](https://www.npmjs.com/package/gulp-inline-css) is being used to convert whatever CSS you throw at it to inline styles.
 
 
-## TODO
-- [x] closing `inline-css` issue [#8](https://github.com/jonkemp/inline-css/issues/8#issuecomment-149025428) would greatly improve this repo
+## TODO:
+- [ ] closing `inline-css` issue [#8](https://github.com/jonkemp/inline-css/issues/8#issuecomment-149025428) would greatly improve this repo
 - [ ] preprocessor support (simplifies BEM)
 - [ ] use github pages to show live demos
 - [ ] check [gulp-inline-css](https://github.com/jonkemp/inline-css) for new features
@@ -104,6 +104,5 @@ If you are using iCloud drive or having problems with it, you might also want to
 <a href="http:fadeit.dk"><img src="http://fadeit.dk/src/assets/img/brand/fadeit_logo_full.svg" alt="The fadeit logo" style="width:200px;"/></a><br/><br/>
 
 ####About fadeit
-We love and are really good at designing &amp; developing beautiful software, web and mobile applications.
-
+We build awesome software, web and mobile applications.
 See more at [fadeit.dk](http://fadeit.dk)
