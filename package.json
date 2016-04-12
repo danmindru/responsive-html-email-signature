@@ -24,7 +24,7 @@
   "homepage": "https://github.com/fadeit/responsive-html-email-signature#readme",
   "devDependencies": {
     "del": "^2.2.0",
-    "gulp": "^3.9.0",
+    "gulp": "^3.9.1",
     "gulp-inline-css": "^3.0.0",
     "gulp-inline-image-html": "^0.2.1",
     "gulp-minify-html": "^1.0.5",
@@ -34,5 +34,6 @@
     "q": "^1.4.1",
     "run-sequence": "^1.1.5",
     "wrench": "^1.5.8"
-  }
+  },
+  "dependencies": {}
 }
