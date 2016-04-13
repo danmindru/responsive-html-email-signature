@@ -92,7 +92,7 @@ a{
  */
 .footer{
   /* @todo gulp-inline-css doesn't parse background-color -> bgcolor */
-  background-color: #FF4244;
+  background-color: #303030;
   padding: 20px 30px 0px 30px;
   color: #f5f5f5;
   border-top: 8px solid #585858;
