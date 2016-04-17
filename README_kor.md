@@ -104,7 +104,25 @@ $ chflags nouchg ~/Library/Mail/V3/MailData/Signatures/*.mailsignature
 
 
 ### 아웃룩 2010에서 사용하기 (Outlook 2010)
+#### 방법 1 
+- 아웃룩 2010을 켜고  `File > Option > Mail > Signature` 으로 접속하세요.
+- 새 서명을 만드세요. (나중에 확인하기 좋게, 표시를 해두시면 좋습니다.)
+- CMD를 켜고 아래와 같이 입력하세요. 
 
+> AppData 폴더가 숨김 폴더라 가급적이면 CMD를 사용하는 것을 권장합니다.
+
+```
+cd AppData\Roamin\Microsoft
+start Signatures 
+
+```
+
+- 이 폴더에서 아까 만든 서명파일을 찾아서 우클릭해서 편집을 하세요. 
+- 모든 HTML코드를 여러분이 새로 만든 코드로 바꿔버리세요.
+- 아웃룩을 열고 서명이 적용됐는지 확인해주세요. 
+
+
+#### 방법 2
 아웃룩에서는 html 파일을 넣는 방법을 제공하지 않습니다. (아...) 그래서 위의 **방법 2** 처럼 파일을 복사/붙여넣기 하는 방법으로 사용할 수 있습니다. 
 
 - `/dist` 에 빌드한 html 파일을 브라우저에서 열고, ctrl A + C 로 복사하세요. 

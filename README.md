@@ -98,17 +98,33 @@ $ chflags nouchg ~/Library/Mail/V3/MailData/Signatures/*.mailsignature
 
 If you are using iCloud drive or having problems with it, you might also want to check [this article](http://matt.coneybeare.me/how-to-make-an-html-signature-in-apple-mail-for-el-capitan-os-x-10-dot-11/).
 
-### Outlook 2010 Client for Windows
+### Outlook 2010 Client for Windows 7
 
+#### Solution 1 
+- Open Outlook 2010 and go to `File > Option > Mail > Signature` 
+- Create new signature (with a placeholder for your convenience)
+- Open signature folder using CMD
+
+> As the AppData folder is hidden, I'd recommend you to opne it via CMD.
+
+```
+cd AppData\Roamin\Microsoft
+start Signatures 
+
+```
+
+- Within this folder, find a file named with your placeholder then right click this file and select edit.
+- Replace it with your HTML and save
+- Open Outlook again and check your signature
+
+
+#### Solution 2
 Unfortnately, Outlook 2010 client dosen't support HTML file import features for your email template. But you can add your own signatures by simple Copy and paste like **Solution 2** above. 
 
 - Open built html file on `/dist` folder and Ctrl A + C 
 - Open Outlook 2010 and go to `File > Option > Mail > Signature` 
 - Create new signature and paste copyed one
 
-
-![2016-04-17 6 57 36](https://cloud.githubusercontent.com/assets/4177529/14586344/15585e40-04d0-11e6-8cb4-3b72aa8c30d1.png)
-![2016-04-17 6 58 15](https://cloud.githubusercontent.com/assets/4177529/14586345/155b3e58-04d0-11e6-8a11-7e7e6e1094d8.png)
 
 > **NB**: base 64 will not be shown on Outlook 2010 client. So, I recommend to use external url if you want to use images. 
 
