@@ -14,7 +14,7 @@ module.exports = [
     contactMain: '<a href="tel:+821012345678"><span>+82-10-1234-5678</span></a> | ', // Wrap phone numbers like this to prevent iOS mail from making them blue.
     contactMail: 'devhelper@onestore.co.kr',
     contactSecondary: '성남시 분당구 판교역로 188 SK플래닛 건물 11층',
-    logoUrl: 'http://cfile25.uf.tistory.com/image/23388A45570F0087013014', // 티스토리 블로그 활용
+    logoUrl: 'assets/type01.png', 
     logoAlt: 'Onestore logo',
     website: 'http://onesto.re/'
   }

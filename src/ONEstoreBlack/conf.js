@@ -15,7 +15,7 @@ module.exports = [
     contactMail: 'devhelper@onestore.co.kr',
     // slogan: '\"The 1st integrated Android App store in Korea\"',
     contactSecondary: '188, Pangyoyeok-ro, Bundang-gu, Seongnam-si, Gyeonggi-do, Korea',
-    logoUrl: 'http://cfile9.uf.tistory.com/image/24337545570F008706369D', // 티스토리 블로그 활
+    logoUrl: 'assets/type03.png', 
     logoAlt: 'ONEstore. logo',
     website: 'http://onesto.re/'
   }

@@ -1,41 +1,68 @@
-# ONE스토어 반응형 이메일 서명 
-## 왜 필요한가?
-> ![enter image description here](https://lh3.googleusercontent.com/BzNweHa8hVXwlLmUierMRZjqdCHcTXV1H1XRBii--RzLBy-xnZ8PIREtFz9x_8Su_Ybw=s0 "IMG_1172.PNG")
-> [이 사진은 주작 입니다. ]
+# Responsive HTML mail signatures
+### Let's punch email clients in the stomach!
+Responsive templates for mail signatures. <br/>
 
-최근에 업체랑 이야기를 하다보니 위와 같은 말을 들었다.  
-그래서 이유를 확인해보니 **이메일의 서명**이 이미지 파일을 사용하다보니 거의 모든 이메일이 첨부파일이 있는 것으로 분류가 되고 있었습니다.
+When you need some basic signatures that work on mobile.<br/>
+...and your colleagues need them too.<br/>
+...but you don't want to deal with tables and inline styles.
 
-> ![enter image description here](https://lh3.googleusercontent.com/dA1R2hr5dBFIY-SDUrGN8h8JwXauOMM5uJzrEsDtU0HphqdmnVObd_0UJOEckF2Y-dZO=s0 "IMG_1174.PNG")
+## Preview
+Here's how the samples look:
+
+![responsive emails-01](https://cloud.githubusercontent.com/assets/1515742/10591900/13889d32-76b9-11e5-8dc0-b89d80189e93.png)
+![responsive emails-02](https://cloud.githubusercontent.com/assets/1515742/10591901/139c4954-76b9-11e5-80f7-5b0ccaf5af81.png)
+
+## Motivation
+Let's make writing HTML emails & email signatures easier. We won't fix all email clients, but we can surely make the process of satisfying them a tad nicer. <br/>
+See a fairly comprehensive rant on the subject (and not only) [in this article](http://fadeit.dk/blog/post/html-emails-and-email-signatures-how-hard-can-it-be).
 
 
-## fadeit 의 이메일 템플릿 엔진 활용
-이미지를 파일을 tag로만 처리하면 해결되는 것이지만 조금 더 욕심을 내보려고 깃헙에서 fadeit 의 템플릿을 뽑아와서 수정을 했습니다. 
+## What does it do
+- [x] config-based template generation
+- [x] allows generating multiple templates (for your colleagues too!)
+- [x] transforms linked (`<link>`) CSS into inline styles
+- [x] embeds local `img[src]` into the template (base64).*
+- [x] minifies the template
+- [x] media queries for mail clients that support them
+- [x] can build templates from multiple sources
+- [x] watches HTML/CSS files for changes and re-builds
 
-- [원본 레파지토리 확인하기](https://github.com/fadeit/responsive-html-email-signature)
 
-### 제공하는 것 
-- NODE JS (gulp) 기반의 이메일 템플릿 빌드 엔진
-- 빌드 시, inline CSS HTML 파일을 자동 생성
-- 이미지 파일을 그냥 html 코드로 넣어버림 (base64)
-- media queries 지원 (메일 클라이언트 지원시)
+**Some mail clients don't support them, so an external URL might be a good idea.*
 
-> Overview
+
+## Getting started
+```
+$ npm install
+$ gulp
+```
+
+Take a look at `src/fadeit/` for an example. Copy / Paste, rename it and change `src/fadeit/conf.js` to suite your needs. Run `gulp` to build the templates (into `/dist`). The gulp task will watch HTML & CSS files by default.
+
+## Overview
 This diagram shows what happens to your templates.
 ![Responsive HTML email template/signatures diagram](http://fadeit.dk/posts/html-emails-and-email-signatures-how-hard-can-it-be/html-responsive-email-template-build-diagram.png)
 
 
-### 샘플 파일 확인 
->![enter image description here](https://lh3.googleusercontent.com/-Y4PAWNMyBzQ/Vw3jt6UsGDI/AAAAAAAAeS0/vmqPMt9AMyEDZ5fZOyeyzGQlB5J9Okmdg/h300/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2016-04-13+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+3.13.10.png "스크린샷 2016-04-13 오후 3.13.10.png")![enter image description here](https://lh3.googleusercontent.com/-hZvXa0vMFzk/Vw3lhGXRkqI/AAAAAAAAeTM/OUsSQwEYb0oGHFGxUSz9Mi6u1hnvISCQg/h300/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2016-04-13+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+3.13.16.png "스크린샷 2016-04-13 오후 3.13.16.png")
+## CSS Support
+Remember, it's HTML mails, so you need to check a big-ass table to find out nothing's gonna work.
+See [this](https://www.campaignmonitor.com/css/). Still [gulp-inline-css](https://www.npmjs.com/package/gulp-inline-css) is being used to convert whatever CSS you throw at it to inline styles.
 
->**Some mail clients don't support them, so an external URL might be a good idea.*
+
+## TODO:
+- [ ] closing `inline-css` issue [#8](https://github.com/jonkemp/inline-css/issues/8#issuecomment-149025428) would greatly improve this repo
+- [ ] preprocessor support (simplifies BEM)
+- [ ] use github pages to show live demos
+- [ ] check [gulp-inline-css](https://github.com/jonkemp/inline-css) for new features
 
 
-## 메일 클라이언트에 적용하는 법 
+## Usage with different e-mail clients
 
-### 아웃룩 
+### Thunderbird
+There are several Thunderbird plugins which can automatically insert signatures when composing e-mails. We recommend [SmartTemplate4](https://addons.mozilla.org/en-us/thunderbird/addon/smarttemplate4) as one of the options. It can use different templates for new e-mails, replies and forwarded e-mails.
 
-### Apple Mail / OS X
+
+### Apple Mail / OS X (oh boy)
 
 #### Solution 1
 - Open Mail.app and go to `Mail` -> `Preferences` -> `Signatures`
@@ -56,10 +83,39 @@ $ open -a TextEdit ~/Library/Mobile\ Documents/com~apple~mail/Data/V3/MailData/S
 You can also open the HTML files in `/dist` in a browser, CMD + A, CMD + C and then paste into the signature box. This won't copy the `<html>` part or the `<style>` part that includes media queries. Follow the guide if you want it.
 
 
+#### Troubleshooting
+
+If solution #1 doesn't work, you can repeat the steps and lock the signature files before you open Mail.app again.
+Lock Files:
+```
+$ chflags uchg ~/Library/Mail/V3/MailData/Signatures/*.mailsignature
+```
+
+If you want to do changes later, you have to unlock the files:
+```
+$ chflags nouchg ~/Library/Mail/V3/MailData/Signatures/*.mailsignature
+```
+
+If you are using iCloud drive or having problems with it, you might also want to check [this article](http://matt.coneybeare.me/how-to-make-an-html-signature-in-apple-mail-for-el-capitan-os-x-10-dot-11/).
+
+### Outlook 2010 Client for Windows
+
+Unfortnately, Outlook 2010 client dosen't support HTML file import features for your email template. But you can add your own signatures by simple Copy and paste like **Solution 2** above. 
+
+- Open built html file on `/dist` folder and Ctrl A + C 
+- Open Outlook 2010 and go to `File > Option > Mail > Signature` 
+- Create new signature and paste copyed one
+
+
+![2016-04-17 6 57 36](https://cloud.githubusercontent.com/assets/4177529/14586344/15585e40-04d0-11e6-8cb4-3b72aa8c30d1.png)
+![2016-04-17 6 58 15](https://cloud.githubusercontent.com/assets/4177529/14586345/155b3e58-04d0-11e6-8a11-7e7e6e1094d8.png)
+
+> **NB**: base 64 will not be shown on Outlook 2010 client. So, I recommend to use external url if you want to use images. 
 
 ===================
 <br/>
 <a href="http:fadeit.dk"><img src="http://fadeit.dk/src/assets/img/brand/fadeit_logo_full.svg" alt="The fadeit logo" style="width:200px;"/></a><br/><br/>
 
-####Powered by  fadeit
+####About fadeit
+We build awesome software, web and mobile applications.
 See more at [fadeit.dk](http://fadeit.dk)
