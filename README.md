@@ -58,6 +58,7 @@ See [this](https://www.campaignmonitor.com/css/). Still [gulp-inline-css](https:
 - [ ] use github pages to show some live demos
 - [ ] check [gulp-inline-css](https://github.com/jonkemp/inline-css) for new features
 - [ ] organize examples better
+- [ ] upgrade deps (could use [gulp-david](https://www.npmjs.com/package/gulp-david) or similar)
 
 
 ## Usage with different e-mail clients
