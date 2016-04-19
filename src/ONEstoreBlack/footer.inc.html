@@ -1,0 +1,37 @@
+<td class="footer" bgcolor="#303030">
+  <!-- @todo gulp-inline-css can't use width in percentages -->
+  <table class="rbcc footer__main" width="100%">
+    <tr>
+      <!-- @todo gulp-inline-css doesn't parse align -->
+      <td class="footer__main__signature" align="left">
+        <!-- @echo signature --><br />
+        <strong><!-- @echo name --></strong><br />
+        <strong><!-- @echo team --></strong> | <!-- @echo title -->
+      </td>
+    </tr>
+
+    <!-- @todo gulp-inline-css doesn't add height attrs -->
+    <tr class="spd" height="60px"></tr>
+
+    <tr>
+      <!-- @todo gulp-inline-css can't use width in percentages, doesn't parse align -->
+      <table class="rbcc footer__main__col2" width="30%" align="right">
+        <!-- @todo gulp-inline-css doesn't parse align -->
+        <td class="footer__main__col2__td" align="right">
+          <a href="<!-- @echo website -->">
+            <img src="<!-- @echo logoUrl -->" alt="<!-- @echo logoAlt -->" class="footer__main__col2__td__img"/>
+          </a>
+        </td>
+      </table>
+
+      <!-- @todo gulp-inline-css can't use width in percentages, doesn't parse align -->
+      <table class="rbcc footer__main__col1" width="70%" align="left">
+        <td class="footer__main__col1__td" align="left">
+          <!-- @echo contactMain -->
+          <a href="mailto:<!-- @echo contactMail -->" target="_blank"><!-- @echo contactMail --></a><br/>
+          address: <a href="http://map.naver.com/?dlevel=11&pinType=site&pinId=35263909&x=127.1100213&y=37.3975215&enc=b64"> <!-- @echo contactSecondary --></a>
+        </td>
+      </table>
+    </tr>
+  </table>
+</td>
