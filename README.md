@@ -12,6 +12,9 @@ Here's how the samples look:
 ![responsive emails-01](https://cloud.githubusercontent.com/assets/1515742/10591900/13889d32-76b9-11e5-8dc0-b89d80189e93.png)
 ![responsive emails-02](https://cloud.githubusercontent.com/assets/1515742/10591901/139c4954-76b9-11e5-80f7-5b0ccaf5af81.png)
 
+## Other languages
+[Read the docs in Korean!](/README_kor.md)
+
 ## Motivation
 Let's make writing HTML emails & email signatures easier. We won't fix all email clients, but we can surely make the process of satisfying them a tad nicer. <br/>
 See a fairly comprehensive rant on the subject (and not only) [in this article](http://fadeit.dk/blog/post/html-emails-and-email-signatures-how-hard-can-it-be).
@@ -52,8 +55,9 @@ See [this](https://www.campaignmonitor.com/css/). Still [gulp-inline-css](https:
 ## TODO:
 - [ ] closing `inline-css` issue [#8](https://github.com/jonkemp/inline-css/issues/8#issuecomment-149025428) would greatly improve this repo
 - [ ] preprocessor support (simplifies BEM)
-- [ ] use github pages to show live demos
+- [ ] use github pages to show some live demos
 - [ ] check [gulp-inline-css](https://github.com/jonkemp/inline-css) for new features
+- [ ] organize examples better
 
 
 ## Usage with different e-mail clients
@@ -110,13 +114,11 @@ If you are using iCloud drive or having problems with it, you might also want to
 ```
 cd AppData\Roamin\Microsoft
 start Signatures 
-
 ```
 
 - Within this folder, find a file named with your placeholder then right click this file and select edit.
 - Replace it with your HTML and save
 - Open Outlook again and check your signature
-
 
 #### Solution 2
 Unfortnately, Outlook 2010 client dosen't support HTML file import features for your email template. But you can add your own signatures by simple Copy and paste like **Solution 2** above. 
@@ -124,7 +126,6 @@ Unfortnately, Outlook 2010 client dosen't support HTML file import features for 
 - Open built html file on `/dist` folder and Ctrl A + C 
 - Open Outlook 2010 and go to `File > Option > Mail > Signature` 
 - Create new signature and paste copyed one
-
 
 > **NB**: base 64 will not be shown on Outlook 2010 client. So, I recommend to use external url if you want to use images. 
 
