@@ -40,19 +40,38 @@ $ gulp # By default, HTML & CSS files in './src' will be watched for changes
 
 Take a look at `src/light/` for an example. Copy / Paste, rename it and change `src/light/conf.js` to suite your needs. Run `gulp` to build the templates (into `/dist`).
 
-## Default template structure
+## Template structure (examples)
+There are 2 examples of template structures, one for the `light` email template and one for the `dark` one.
+
+Here's how the dark one looks:
 ```bash
 ./src
-├── template-name
+├── dark
     ├── conf.js                   # Template strings, logo, etc.
+    ├── dark.css                  # Main stylesheet.
     ├── footer.inc.html           # Contact info & logo
     ├── head.inc.html             # 'Responsive' CSS & stylesheet href
     ├── signature-reply.inc.html  # Simplified signature (loads head)
     ├── signature.html            # Full signature (loads head/footer)
 ```
-Files are included via [gulp-preprocess](https://www.npmjs.com/package/gulp-preprocess). You are of course encouraged to change the default structure for your use case.
 
-There's one convention you need to keep in mind: `all files that you wish to include should follow the *.inc.html format`. The gulp task ignores `*.inc.html` files, but will try to process all `.html` files.
+Here's how the light one looks:
+```bash
+./src
+├── light
+    ├── conf.js                   # Template strings, logo, etc.
+    ├── footer.inc.html           # Contact info & logo
+    ├── full-mail.html            # Body + signature 
+    ├── head.inc.html             # 'Responsive' CSS & stylesheet href
+    ├── signature-reply.inc.html  # Simplified signature (loads head)
+    ├── signature.html            # Full signature (loads head/footer)
+```
+
+Files are included via [gulp-preprocess](https://www.npmjs.com/package/gulp-preprocess). 
+
+There's one convention you have to keep in mind: `all files that you wish to include should follow the *.inc.html format`. The gulp task ignores `*.inc.html` files, but will try to process & create email templates from all `.html` files.
+
+You are of course encouraged to change the default structure for your use case.
 
 
 ## Overview of the build process
