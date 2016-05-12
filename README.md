@@ -1,10 +1,9 @@
-# Responsive HTML mail signatures
+# Responsive HTML email signature(s)
 ### Let's punch email clients in the stomach!
-Responsive templates for mail signatures. <br/>
-
-When you need some basic signatures that work on mobile.<br/>
+When you need some basic responsive email signatures that work on mobile.<br/>
 ...and your colleagues need them too.<br/>
 ...but you don't want to deal with tables and inline styles.
+
 
 ## Preview
 Here's how the samples look:
@@ -12,11 +11,11 @@ Here's how the samples look:
 ![responsive emails-01](https://cloud.githubusercontent.com/assets/1515742/10591900/13889d32-76b9-11e5-8dc0-b89d80189e93.png)
 ![responsive emails-02](https://cloud.githubusercontent.com/assets/1515742/10591901/139c4954-76b9-11e5-80f7-5b0ccaf5af81.png)
 
-## Other languages
+## Read the docs in other languages
 [Read the docs in Korean!](/README_kor.md)
 
 ## Motivation
-Let's make writing HTML emails & email signatures easier. We won't fix all email clients, but we can surely make the process of satisfying them a tad nicer. <br/>
+Let's make writing HTML emails & email signatures easier. We won't fix all email clients, but we can surely make our lives easier with some neat automation. <br/>
 See a fairly comprehensive rant on the subject (and not only) [in this article](http://fadeit.dk/blog/post/html-emails-and-email-signatures-how-hard-can-it-be).
 
 
@@ -30,8 +29,7 @@ See a fairly comprehensive rant on the subject (and not only) [in this article](
 - [x] can build templates from multiple sources
 - [x] watches HTML/CSS files for changes and re-builds
 
-
-**Some mail clients don't support them, so an external URL might be a good idea.*
+**Some mail clients don't support them, so an external URL might be a good idea. Also, some clients might complain about the size, so keep an eye out.*
 
 
 ## Getting started
@@ -49,20 +47,10 @@ This diagram shows what happens to your templates.
 
 ## CSS Support
 Remember, it's HTML mails, so you need to check a big-ass table to find out nothing's gonna work.
-See [this](https://www.campaignmonitor.com/css/). Still [gulp-inline-css](https://www.npmjs.com/package/gulp-inline-css) is being used to convert whatever CSS you throw at it to inline styles.
-
-
-## TODO:
-- [ ] closing `inline-css` issue [#8](https://github.com/jonkemp/inline-css/issues/8#issuecomment-149025428) would greatly improve this repo
-- [ ] preprocessor support (simplifies BEM)
-- [ ] use github pages to show some live demos
-- [ ] check [gulp-inline-css](https://github.com/jonkemp/inline-css) for new features
-- [ ] organize examples better
-- [ ] upgrade deps (could use [gulp-david](https://www.npmjs.com/package/gulp-david) or similar)
+See [this](https://www.campaignmonitor.com/css/) for more info. [Gulp-inline-css](https://www.npmjs.com/package/gulp-inline-css) is being used to convert whatever CSS you throw at it to inline styles, but it probably won't handle everything.
 
 
 ## Usage with different e-mail clients
-
 ### Thunderbird
 There are several Thunderbird plugins which can automatically insert signatures when composing e-mails. We recommend [SmartTemplate4](https://addons.mozilla.org/en-us/thunderbird/addon/smarttemplate4) as one of the options. It can use different templates for new e-mails, replies and forwarded e-mails.
 
