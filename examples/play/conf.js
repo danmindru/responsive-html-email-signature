@@ -10,4 +10,4 @@ module.exports = [
     logoAlt: 'Play. logo',
     website: 'http://tryplay.dk'
   }
-]
+];

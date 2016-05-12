@@ -16,4 +16,4 @@ module.exports = [
     logoAlt: 'fadeit logo',
     website: 'http://fadeit.dk'
   }
-]
+];
