@@ -25,6 +25,7 @@
   "devDependencies": {
     "del": "^2.2.0",
     "gulp": "^3.9.1",
+    "gulp-david": "^0.4.2",
     "gulp-inline-css": "^3.0.0",
     "gulp-inline-image-html": "^0.2.1",
     "gulp-minify-html": "^1.0.5",
