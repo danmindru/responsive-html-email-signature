@@ -33,15 +33,31 @@ See a fairly comprehensive rant on the subject (and not only) [in this article](
 
 
 ## Getting started
-```
+```bash
 $ npm install
-$ gulp
+$ gulp # By default, HTML & CSS files in './src' will be watched for changes
 ```
 
-Take a look at `src/fadeit/` for an example. Copy / Paste, rename it and change `src/fadeit/conf.js` to suite your needs. Run `gulp` to build the templates (into `/dist`). The gulp task will watch HTML & CSS files by default.
+Take a look at `src/light/` for an example. Copy / Paste, rename it and change `src/light/conf.js` to suite your needs. Run `gulp` to build the templates (into `/dist`).
 
-## Overview
-This diagram shows what happens to your templates.
+## Default template structure
+```bash
+./src
+├── template-name
+    ├── conf.js                   # Template strings, logo, etc.
+    ├── footer.inc.html           # Contact info & logo
+    ├── head.inc.html             # 'Responsive' CSS & stylesheet href
+    ├── signature-reply.inc.html  # Simplified signature (loads head)
+    ├── signature.html            # Full signature (loads head/footer)
+```
+Files are included via [gulp-preprocess](https://www.npmjs.com/package/gulp-preprocess). You are of course encouraged to change the default structure for your use case.
+
+There's one convention you need to keep in mind: `all files that you wish to include should follow the *.inc.html format`. The gulp task ignores `*.inc.html` files, but will try to process all `.html` files.
+
+
+## Overview of the build process
+This diagram shows what happens to your email templates.
+Each folder in 'src' is considered a `template group`. A template file will be generated for each of the configuration objects you add to the template group -> `conf.js`.
 ![Responsive HTML email template/signatures diagram](http://fadeit.dk/posts/html-emails-and-email-signatures-how-hard-can-it-be/html-responsive-email-template-build-diagram.png)
 
 
