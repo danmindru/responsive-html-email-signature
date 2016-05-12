@@ -12,47 +12,63 @@ var gulp = require('gulp'),
     inlineimg = require('gulp-inline-image-html');
 
 function buildTask(options){
-  gulp.task('build', function(cb) {
-    var promises = []
+  gulp.task('build', function build(cb) {
+    var promises = [];
 
-    del(options.dist).then(function(){
-      wrench.readdirSyncRecursive(options.src).filter(function(file) {
-        return (!file.match('/') && !file.match(/^\.+/g)) ? file : false
-      }).forEach(function(dir){
-        var confPath = './../' + options.src + '/' + dir + '/conf.js';
-        delete require.cache[require.resolve(confPath)]
-        promises.push(makeTemplates(dir, require(confPath)));
-      });
-
-      function makeTemplates(dir, confItems){
-        confItems.forEach(function(item){
+    /** Makes templates for a given directory & its configurations.
+     * @function makeTemplates
+     * @param {String} dir Directory to make templates from.
+     * @param {Array} confItems A list of configurations objects (usually persons) to make templates from.
+     */
+    function makeTemplates(dir, confItems){
+      confItems
+        .forEach(function handleConf(conf){
           var cwd = options.src + '/' + dir;
 
-          gulp.src([cwd + '/**/*.html', '!' + cwd + '/**/*.inc.html'])
-          .pipe(preprocess({
-            context: item
-          }))
-          .pipe(inlineimg(cwd))
-          .pipe(inlineCss({
-            applyTableAttributes: true,
-            applyWidthAttributes: true,
-            preserveMediaQueries: true,
-            removeStyleTags: false
-          }))
-          .pipe(minifyHTML({quotes: true}))
-          .pipe(minifyInline())
-          .pipe(rename(function rename(path){
-            path.dirname = dir;
-            path.basename += '-' + item.id;
-            return path;
-          }))
-          .pipe(gulp.dest(options.dist));
+          gulp
+            .src([cwd + '/**/*.html', '!' + cwd + '/**/*.inc.html'])
+            .pipe(preprocess({
+              context: conf
+            }))
+            .pipe(inlineimg(cwd))
+            .pipe(inlineCss({
+              applyTableAttributes: true,
+              applyWidthAttributes: true,
+              preserveMediaQueries: true,
+              removeStyleTags: false
+            }))
+            .pipe(minifyHTML({quotes: true}))
+            .pipe(minifyInline())
+            .pipe(rename(function rename(path){
+              path.dirname = dir;
+              path.basename += '-' + conf.id;
+              return path;
+            }))
+            .pipe(gulp.dest(options.dist));
         });
-      }
+    }
 
-      Q.all(promises).then(function(){ cb(); });
+    /** Clean up & then read 'src' to generate templates (build entry point). */
+    del(options.dist).then(function buildStart(){
+      /** Loop through dirs and load their conf files.
+        * Promisify all 'makeTemplate' calls and when resolved, make a call to the task `cb` to let gulp know we're done.
+        */
+      wrench
+        .readdirSyncRecursive(options.src)
+        .filter(function filterFiles(file) {
+          /** Read only folders, skip files. */
+          return (!file.match('/') && !file.match(/^\.+/g)) ? file : false;
+        })
+        .forEach(function readConfigurations(dir){
+          /** NB: For 'watch' to properly work, the cache needs to be deleted before each require. */
+          var confPath = './../' + options.src + '/' + dir + '/conf.js';
+          delete require.cache[require.resolve(confPath)];
+          promises.push(makeTemplates(dir, require(confPath)));
+        });
+
+      Q.all(promises).then(function buildReady(){ cb(); });
     });
   });
 }
 
-module.exports = buildTask
+module.exports = buildTask;
