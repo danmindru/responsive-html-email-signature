@@ -1,6 +1,5 @@
-<td class="footer" bgcolor="#303030">
-  <!-- @todo gulp-inline-css can't use width in percentages -->
-  <table class="rbcc footer__main" width="100%">
+<td class="footer">
+  <table class="rbcc footer__main">
     <tr>
       <!-- @todo gulp-inline-css doesn't parse align -->
       <td class="footer__main__signature" align="left">
@@ -9,12 +8,11 @@
       </td>
     </tr>
 
-    <!-- @todo gulp-inline-css doesn't add height attrs -->
-    <tr class="spd" height="60px"></tr>
+    <tr class="spd"><td class="spd__inner"></td></tr>
 
     <tr>
-      <!-- @todo gulp-inline-css can't use width in percentages, doesn't parse align -->
-      <table class="rbcc footer__main__col2" width="30%" align="right">
+      <!-- @todo gulp-inline-css doesn't parse align -->
+      <table class="rbcc footer__main__col2" align="right">
         <!-- @todo gulp-inline-css doesn't parse align -->
         <td class="footer__main__col2__td" align="right">
           <a href="<!-- @echo website -->">
@@ -23,8 +21,9 @@
         </td>
       </table>
 
-      <!-- @todo gulp-inline-css can't use width in percentages, doesn't parse align -->
-      <table class="rbcc footer__main__col1" width="70%" align="left">
+      <!-- @todo gulp-inline-css doesn't parse align -->
+      <table class="rbcc footer__main__col1" align="left">
+        <!-- @todo gulp-inline-css doesn't parse align -->
         <td class="footer__main__col1__td" align="left">
           <span><!-- @echo slogan --></span><br/>
           <!-- @echo contactMain -->

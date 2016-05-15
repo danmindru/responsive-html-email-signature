@@ -3,12 +3,17 @@
 <head>
 <meta name="viewport" content="width=device-width">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!-- Solving https://github.com/jonkemp/inline-css/issues/8 would make things nicer. -->
 
 </head>
 
 <style type="text/css">
-  /* Responsive stuff goes here (inline css doesn't know what to do with it). */
+  /* Ideally, this would be part of a linked CSS file. @see https://github.com/fadeit/responsive-html-email-signature/issues/15 */
+
+  /*
+   * ================
+   * 4. Basic responsive stuff.
+   * ================
+   */
   @media only screen and (max-width:560px){
     .footer td{
       font-size: 12px!important;
@@ -43,15 +48,13 @@
 
 <body style="-webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none;">
   <br> <!-- <br/> Makes it easier to add text when composing -->
-  <!-- @todo gulp-inline-css can't use width in percentages, doesn't parse background-color -> bgcolor -->
-  <table class="main rbcc" width="100%" bgcolor="#ffffff" ;="" style="border: 0; cellpadding: 0; cellspacing: 0;" border="0" cellpadding="0" cellspacing="0">
-    <tr class="sp" height="30px" style="box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; height: 30px; line-height: 22px;"></tr>
+
+  <table class="main rbcc" style="border: 0; cellpadding: 0; cellspacing: 0;" border="0" cellpadding="0" cellspacing="0" bgcolor="#ffffff" width="100%">
+    <tr class="sp" style="box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px;"><td class="sp__inner" style="" height="30px"></td></tr>
 
     <tr class="rbcc" style="border: 0; box-sizing: border-box; cellpadding: 0; cellspacing: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px;">
-      <!-- @todo gulp-inline-css doesn't parse background-color -> bgcolor -->
-      <td class="footer" bgcolor="#303030" style="border-top: 8px solid #585858; color: #f5f5f5; padding: 20px 30px 0px 30px;">
-        <!-- @todo gulp-inline-css can't use width in percentages -->
-        <table class="rbcc footer__main" width="100%" style="border: 0; cellpadding: 0; cellspacing: 0;" border="0" cellpadding="0" cellspacing="0">
+      <td class="footer" style="border-top: 8px solid #585858; color: #f5f5f5; padding: 20px 30px 0px 30px;" bgcolor="#303030">
+        <table class="rbcc footer__main" style="border: 0; cellpadding: 0; cellspacing: 0;" border="0" cellpadding="0" cellspacing="0" width="100%">
           <tr style="box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px;">
             <!-- @todo gulp-inline-css doesn't parse align -->
             <td class="footer__main__signature" align="left" style="align: left; color: #f5f5f5; font-size: 14px;">
@@ -60,12 +63,11 @@
             </td>
           </tr>
       
-          <!-- @todo gulp-inline-css doesn't add height attrs -->
-          <tr class="spd" height="60px" style="box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; height: 60px; line-height: 22px;"></tr>
+          <tr class="spd" style="box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px;"><td class="spd__inner" style="" height="60px"></td></tr>
       
           <tr style="box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px;">
-            <!-- @todo gulp-inline-css can't use width in percentages, doesn't parse align -->
-            <table class="rbcc footer__main__col2" width="30%" align="right" style="align: right; border: 0; cellpadding: 0; cellspacing: 0;" border="0" cellpadding="0" cellspacing="0">
+            <!-- @todo gulp-inline-css doesn't parse align -->
+            <table class="rbcc footer__main__col2" align="right" style="align: right; border: 0; cellpadding: 0; cellspacing: 0;" border="0" cellpadding="0" cellspacing="0" width="30%">
               <!-- @todo gulp-inline-css doesn't parse align -->
               <td class="footer__main__col2__td" align="right" style="align: right; color: #f5f5f5; font-size: 14px;">
                 <a href="http://dark.dk" style="color: #f5f5f5; text-decoration: none;">
@@ -74,8 +76,9 @@
               </td>
             </table>
       
-            <!-- @todo gulp-inline-css can't use width in percentages, doesn't parse align -->
-            <table class="rbcc footer__main__col1" width="70%" align="left" style="align: left; border: 0; cellpadding: 0; cellspacing: 0; margin-bottom: 40px;" border="0" cellpadding="0" cellspacing="0">
+            <!-- @todo gulp-inline-css doesn't parse align -->
+            <table class="rbcc footer__main__col1" align="left" style="align: left; border: 0; cellpadding: 0; cellspacing: 0; margin-bottom: 40px;" border="0" cellpadding="0" cellspacing="0" width="70%">
+              <!-- @todo gulp-inline-css doesn't parse align -->
               <td class="footer__main__col1__td" align="left" style="align: left; color: #9E9E9E; padding-top: 15px;">
                 <span style="font-size: 18px; margin-bottom: 5px;">LED Pylon. LED Wall. Digital Signage.</span><br>
                 Call <a href="tel:004580100100" style="color: #f5f5f5; text-decoration: none;"><span style="color: #f5f5f5 !important; text-decoration: none !important;">(45) 80100100</span></a> or email us at

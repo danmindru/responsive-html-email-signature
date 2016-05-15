@@ -3,12 +3,17 @@
 <head>
 <meta name="viewport" content="width=device-width" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<!-- Solving https://github.com/jonkemp/inline-css/issues/8 would make things nicer. -->
 <link rel="stylesheet" href="dark.css">
 </head>
 
 <style type="text/css">
-  /* Responsive stuff goes here (inline css doesn't know what to do with it). */
+  /* Ideally, this would be part of a linked CSS file. @see https://github.com/fadeit/responsive-html-email-signature/issues/15 */
+
+  /*
+   * ================
+   * 4. Basic responsive stuff.
+   * ================
+   */
   @media only screen and (max-width:560px){
     .footer td{
       font-size: 12px!important;

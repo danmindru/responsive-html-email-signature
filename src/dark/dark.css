@@ -1,5 +1,3 @@
-/* Solving https://github.com/jonkemp/inline-css/issues/8 would make things nicer. */
-
 /*
  * =====================================
  * 1. Common styles for general table things.
@@ -22,10 +20,7 @@ tr{
 }
 
 .main{
-  /* @todo gulp-inline-css can't use width in percentages */
-  /* This style property fucks up the width on OS X, needs to be *JUST* attribute ->
-     width:100%; */
-  /* @todo gulp-inline-css doesn't parse background-color -> bgcolor */
+  width:100%;
   background-color: #ffffff;
 }
 
@@ -40,15 +35,15 @@ tr{
   cellspacing:0;
 }
 
-.sp{
-  /* sp -> space, Separator tr */
-  /* @todo gulp-inline-css doesn't add height attrs */
+.sp{ /* Separator tr; props are actually contained by it's inner element atm. */ }
+
+.sp__inner{
   height: 30px;
 }
 
-.spd{
-  /* spd -> space - double, Separator tr */
-  /* @todo gulp-inline-css doesn't add height attrs */
+.spd{ /* Separator tr (double); props are actually contained by it's inner element atm. */ }
+
+.spd__inner{
   height: 60px;
 }
 
@@ -91,7 +86,6 @@ a{
  * ================
  */
 .footer{
-  /* @todo gulp-inline-css doesn't parse background-color -> bgcolor */
   background-color: #303030;
   padding: 20px 30px 0px 30px;
   color: #f5f5f5;
@@ -104,7 +98,6 @@ a{
 
 .footer--simple{
   padding-bottom: 20px;
-  /* @todo gulp-inline-css doesn't parse background-color -> bgcolor */
   background-color: #FFFFFF;
 }
 
@@ -113,9 +106,8 @@ a{
 }
 
 .footer__main{
-  /* @todo gulp-inline-css can't use width in percentages */
-  /* This style property fucks up the width on OS X, needs to be *JUST* attribute ->
-     width:100%; */
+  /* This style property fucks up the width on OS X, needs to be *JUST* attribute */
+  width:100%;
 }
 
 .footer__main__signature{
@@ -126,7 +118,6 @@ a{
 }
 
 .footer__main__col1{
-  /* @todo gulp-inline-css can't use width in percentages */
   width:70%;
   margin-bottom:40px;
   /* @todo gulp-inline-css doesn't parse align */
@@ -152,7 +143,6 @@ a{
 }
 
 .footer__main__col2{
-  /* @todo gulp-inline-css can't use width in percentages */
   width:30%;
   /* @todo gulp-inline-css doesn't parse align */
   align:right;
