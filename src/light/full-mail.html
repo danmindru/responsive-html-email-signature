@@ -1,8 +1,7 @@
 <!-- @include head.inc.html -->
 
-<!-- @todo gulp-inline-css can't use width in percentages, doesn't parse background-color -> bgcolor -->
 <body>
-  <table class="main rbcc" width="100%" bgcolor="#ffffff";>
+  <table class="main rbcc">
     <tr class="rbcc">
       <td class="main__welcome">
         <b><!-- @echo welcome --></b>
@@ -14,11 +13,9 @@
       </td>
     </tr>
 
-    <!-- @todo gulp-inline-css doesn't add height attrs -->
-    <tr class="sp" height="30px"></tr>
+    <tr class="sp"><td class="sp__inner"></td></tr>
 
     <tr class="rbcc">
-      <!-- @todo gulp-inline-css doesn't parse background-color -> bgcolor -->
       <!-- @include footer.inc.html -->
     </tr>
   </table>

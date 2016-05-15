@@ -1,5 +1,3 @@
-/* Solving https://github.com/jonkemp/inline-css/issues/8 would make things nicer. */
-
 /*
  * =====================================
  * 1. Common styles for general table things.
@@ -22,10 +20,7 @@ tr{
 }
 
 .main{
-  /* @todo gulp-inline-css can't use width in percentages */
-  /* This style property fucks up the width on OS X, needs to be *JUST* attribute ->
-     width:100%; */
-  /* @todo gulp-inline-css doesn't parse background-color -> bgcolor */
+  width:100%;
   background-color: #ffffff;
 }
 
@@ -40,13 +35,19 @@ tr{
   cellspacing:0;
 }
 
-.sp{
-  /* Separator tr */
-  /* @todo gulp-inline-css doesn't add height attrs */
+.sp{ /* Separator tr; props are actually contained by it's inner element atm. */ }
+
+.sp__inner{
   height: 30px;
 }
 
-.gray-hr{
+.gray-hr{ /* 100% width light grey line; props are actually contained by inner elements atm. */ }
+
+.gray-hr td{
+  width: 100%;
+}
+
+.gray-hr hr{
   border-bottom:1px solid #E4E4E4;
   border-top:none;
   margin-bottom:20px;
@@ -85,7 +86,6 @@ a{
  * ================
  */
 .footer{
-  /* @todo gulp-inline-css doesn't parse background-color -> bgcolor */
   background-color: #f5f5f5;
   padding: 20px 30px 0px 30px;
   color: #888;
@@ -98,14 +98,12 @@ a{
 
 .footer--simple{
   padding-bottom: 20px;
-  /* @todo gulp-inline-css doesn't parse background-color -> bgcolor */
   background-color: #FFFFFF;
 }
 
 .footer__main{
-  /* @todo gulp-inline-css can't use width in percentages */
-  /* This style property fucks up the width on OS X, needs to be *JUST* attribute ->
-     width:100%; */
+  /* NB: This prop fucks up the width on OS X, needs to be *JUST* attribute. */
+  width:100%;
 }
 
 .footer__main__signature{
@@ -116,7 +114,6 @@ a{
 }
 
 .footer__main__col1{
-  /* @todo gulp-inline-css can't use width in percentages */
   width:70%;
   margin-bottom:30px;
   /* @todo gulp-inline-css doesn't parse align */
@@ -137,7 +134,6 @@ a{
 }
 
 .footer__main__col2{
-  /* @todo gulp-inline-css can't use width in percentages */
   width:30%;
   /* @todo gulp-inline-css doesn't parse align */
   align:right;
