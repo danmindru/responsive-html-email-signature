@@ -1,3 +1,13 @@
+@TODO
+- email wrap like phones
+- ipad responsive center
+- body bg 
+- wrap content for proper bg..?
+- less margin for mobile hr
+
+
+
+
 # Responsive HTML email signature(s)
 ### Let's punch email clients in the stomach!
 When you need some basic responsive email signatures that work on mobile.<br/>
@@ -75,14 +85,17 @@ You are of course encouraged to change the default structure for your use case.
 
 
 ## Overview of the build process
-This diagram shows what happens to your email templates.
-Each folder in 'src' is considered a `template group`. A template file will be generated for each of the configuration objects you add to the template group -> `conf.js`.
+The diagram below shows what happens to your email templates.
+Each folder in 'src' is considered a `template group`. A template file will be generated for each of the configuration objects you add have in the template group -> `conf.js`.
 ![Responsive HTML email template/signatures diagram](http://fadeit.dk/posts/html-emails-and-email-signatures-how-hard-can-it-be/html-responsive-email-template-build-diagram.png)
 
 
 ## CSS Support
 Remember, it's HTML mails, so you need to check a big-ass table to find out nothing's gonna work.
 See [this](https://www.campaignmonitor.com/css/) for more info. [Gulp-inline-css](https://www.npmjs.com/package/gulp-inline-css) is being used to convert whatever CSS you throw at it to inline styles, but it probably won't handle everything.
+
+Some bonuses of using `gulp-inline-css`: many css props will be converted to attributes. For example, the 'background-color' prop will be added as 'bgcolor' attribute to table elements.
+For more details take a look at the [inline-css mappings](https://github.com/jonkemp/inline-css/blob/master/lib/setTableAttrs.js).
 
 
 ## Usage with different e-mail clients
