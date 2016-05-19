@@ -1,5 +1,4 @@
 /vendor/
 /node_modules/
-/build/
-/application/
+/tmp/
 .DS_Store

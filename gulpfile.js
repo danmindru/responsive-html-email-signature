@@ -5,7 +5,8 @@ var gulp = require('gulp'),
 
 var options = {
   src: 'src',
-  dist: 'dist'
+  dist: 'dist',
+  workingDir: 'tmp'
 };
 
 /** Load tasks from the '/tasks' directory.
@@ -22,4 +23,4 @@ wrench
   });
 
 /** By default templates will be built into '/dist', then gulp will watch for changes in '/src'. */
-gulp.task('default', ['build', 'watch']);
+gulp.task('default', ['dupe', 'postcss', 'less', 'sass', 'build', 'clean', 'watch']);
