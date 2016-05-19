@@ -1,9 +1,3 @@
-@TODO
-- email wrap like phones
-- less margin for mobile hr
-- add foundation example
-
-
 # Responsive HTML email signature(s)
 ### Let's punch email clients in the stomach!
 When you need some basic responsive email signatures that work on mobile.<br/>
