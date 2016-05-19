@@ -38,7 +38,7 @@ tr{
 .sp{ /* Separator tr; props are actually contained by it's inner element atm. */ }
 
 .sp__inner{
-  height: 30px;
+  padding: 15px 0;
 }
 
 .gray-hr{ /* 100% width light grey line; props are actually contained by inner elements atm. */ }
