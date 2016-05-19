@@ -1,11 +1,7 @@
 @TODO
 - email wrap like phones
-- ipad responsive center
-- body bg 
-- wrap content for proper bg..?
 - less margin for mobile hr
-
-
+- add foundation example
 
 
 # Responsive HTML email signature(s)
