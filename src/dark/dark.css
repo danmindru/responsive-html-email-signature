@@ -47,13 +47,6 @@ tr{
   height: 60px;
 }
 
-.gray-hr{
-  border-bottom:1px solid #E4E4E4;
-  border-top:none;
-  margin-bottom:20px;
-  margin-top:20px;
-}
-
 a{
   text-decoration: none;
   color: #0fade1;
