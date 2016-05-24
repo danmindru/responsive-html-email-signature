@@ -3,9 +3,17 @@
 var gulp = require('gulp');
 
 function watchTask(options){
-  gulp.task('watch', function(){
-    //@todo watch less & sass files
-    gulp.watch([options.src + '/**/*.html', options.src + '/**/*.css', options.src + '/**/conf.js'], ['dupe', 'postcss', 'less', 'sass', 'build', 'clean']);
+  gulp.task('watch', ['dupe', 'build'], function(){
+    gulp.watch(
+      [
+        options.source + '/**/*.html',
+        options.source + '/**/*.css',
+        options.source + '/**/*.sass',
+        options.source + '/**/*.less',
+        options.source + '/**/conf.js'
+      ],
+      ['dupe', 'less', 'sass', 'postcss', 'build']
+    );
   });
 }
 

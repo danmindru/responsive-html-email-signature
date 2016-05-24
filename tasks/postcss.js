@@ -7,13 +7,27 @@ var gulp = require('gulp'),
 function postcssTask(options){
   gulp.task('postcss', function () {
     var processors = [
-      autoprefixer({browsers: ['Android', 'ChromeAndroid', 'FirefoxAndroid', 'Opera Mini', 'Chrome', 'Firefox', 'Explorer', 'Edge', 'iOS', 'Opera', 'Safari', 'ExplorerMobile']}),
+      autoprefixer({
+        browsers: [
+          'Android',
+          'ChromeAndroid',
+          'FirefoxAndroid',
+          'Opera Mini',
+          'Chrome',
+          'Firefox',
+          'Explorer',
+          'Edge',
+          'iOS',
+          'Opera',
+          'Safari',
+          'ExplorerMobile'
+        ]
+      })
     ];
 
-    //@TODO src & dest
-    return gulp.src('./src/*.css')
+    return gulp.src(options.workingDir + '/*.css')
       .pipe(postcss(processors))
-      .pipe(gulp.dest('./tmp'));
+      .pipe(gulp.dest(options.workingDir));
   });
 }
 

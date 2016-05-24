@@ -24,18 +24,18 @@
   "homepage": "https://github.com/fadeit/responsive-html-email-signature#readme",
   "devDependencies": {
     "autoprefixer": "^6.3.6",
-    "del": "~2.2.0",
+    "del": "^2.2.0",
     "gulp": "~3.9.1",
     "gulp-david": "~0.4.2",
     "gulp-inline-css": "~3.1.0",
     "gulp-inline-image-html": "~0.2.1",
     "gulp-minify-html": "~1.0.5",
     "gulp-minify-inline": "~0.2.1",
+    "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.1.1",
     "gulp-preprocess": "~2.0.0",
     "gulp-rename": "~1.2.2",
     "q": "~1.4.1",
-    "run-sequence": "~1.1.5",
     "wrench": "~1.5.8"
   },
   "dependencies": {}
