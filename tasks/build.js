@@ -39,7 +39,7 @@ function buildTask(options){
               return prev += '<link rel="stylesheet" href="' + current + '">';
             }, '');
 
-          gulp
+          options
             .src([cwd + '/**/*.html', '!' + cwd + '/**/*.inc.html'])
             .pipe(preprocess({
               context: conf

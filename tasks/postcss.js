@@ -12,7 +12,8 @@ function postcssTask(options){
       })
     ];
 
-    return gulp.src(options.workingDir + '/**/*.css')
+    return options
+      .src(options.workingDir + '/**/*.css')
       .pipe(postcss(processors))
       .pipe(gulp.dest(options.workingDir));
   });

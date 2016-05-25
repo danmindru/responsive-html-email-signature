@@ -7,7 +7,8 @@ var gulp = require('gulp'),
 
 function lessTask(options){
   gulp.task('less', ['dupe'], function(){
-    return gulp.src(options.workingDir + '/**/*.less')
+    return options
+      .src(options.workingDir + '/**/*.less')
       .pipe(less())
       .pipe(autoprefixer({
         browsers: ['last 5 versions']

@@ -8,7 +8,7 @@ function watchTask(options){
       [
         options.source + '/**/*.html',
         options.source + '/**/*.css',
-        options.source + '/**/*.sass',
+        options.source + '/**/*.scss',
         options.source + '/**/*.less',
         options.source + '/**/conf.js'
       ],

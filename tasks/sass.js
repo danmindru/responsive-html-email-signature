@@ -7,7 +7,8 @@ var gulp = require('gulp'),
 
 function sassTask(options){
   gulp.task('sass', ['dupe'], function(){
-    return gulp.src(options.workingDir + '/**/*.scss')
+    return options
+      .src(options.workingDir + '/**/*.scss')
       .pipe(sass())
       .pipe(autoprefixer({
         browsers: ['last 5 versions']
