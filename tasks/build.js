@@ -12,7 +12,7 @@ var gulp = require('gulp'),
     inlineimg = require('gulp-inline-image-html');
 
 function buildTask(options){
-  gulp.task('build', ['dupe'], function build() {
+  gulp.task('build', ['dupe', 'less', 'sass', 'postcss'], function build() {
     var promises = [];
 
     /** Makes templates for a given directory & its configurations.
@@ -24,6 +24,20 @@ function buildTask(options){
       confItems
         .forEach(function handleConf(conf){
           var cwd = options.workingDir + '/' + dir;
+
+          /**
+           * Find stylesheets relative to the CWD & generate <link> tags.
+           * This way we can automagically inject them into <head>.
+           */
+          conf.stylesheets = wrench
+            .readdirSyncRecursive(cwd)
+            .filter(function filterFiles(file) {
+              /* Read only CSS files. */
+              return (file.match(/.*\.css/)) ? file : false;
+            })
+            .reduce(function(prev, current, index, acc){
+              return prev += '<link rel="stylesheet" href="' + current + '">';
+            }, '');
 
           gulp
             .src([cwd + '/**/*.html', '!' + cwd + '/**/*.inc.html'])
@@ -37,8 +51,8 @@ function buildTask(options){
               preserveMediaQueries: true,
               removeStyleTags: false
             }))
-            //.pipe(minifyHTML({quotes: true}))
-            //.pipe(minifyInline())
+            .pipe(minifyHTML({quotes: true}))
+            .pipe(minifyInline())
             .pipe(rename(function rename(path){
               path.dirname = dir;
               path.basename += '-' + conf.id;
@@ -50,13 +64,13 @@ function buildTask(options){
 
     /** Clean up & then read 'src' to generate templates (build entry point). */
     del(options.dist).then(function buildStart(){
-     /** Loop through dirs and load their conf files.
+     /**
+      * Loop through dirs and load their conf files.
       * Promisify all 'makeTemplate' calls and when resolved, make a call to the task `cb` to let gulp know we're done.
       */
       wrench
         .readdirSyncRecursive('./' + options.workingDir)
         .filter(function filterFiles(file) {
-
           /* Read only folders, skip files. */
           return (!file.match('/') && !file.match(/^\.+/g)) ? file : false;
         })

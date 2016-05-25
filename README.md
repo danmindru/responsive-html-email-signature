@@ -1,3 +1,7 @@
+- Stylesheets are included automatically, place them wherever in the dir
+- Autoprefixer is there to help
+- use SASS, LESS or postcss.
+
 # Responsive HTML email signature(s)
 ### Let's punch email clients in the stomach!
 When you need some basic responsive email signatures that work on mobile.<br/>
@@ -48,9 +52,9 @@ Here's how the dark one looks:
 ./src
 ├── dark
     ├── conf.js                   # Template strings, logo, etc.
-    ├── dark.css                  # Main stylesheet.
+    ├── dark.css                  # Stylesheet.
     ├── footer.inc.html           # Contact info & logo
-    ├── head.inc.html             # 'Responsive' CSS & stylesheet href
+    ├── head.inc.html             # 'Responsive' CSS goes here
     ├── signature-reply.inc.html  # Simplified signature (loads head)
     ├── signature.html            # Full signature (loads head/footer)
 ```
@@ -62,7 +66,7 @@ Here's how the light one looks:
     ├── conf.js                   # Template strings, logo, etc.
     ├── footer.inc.html           # Contact info & logo
     ├── full-mail.html            # Body + signature 
-    ├── head.inc.html             # 'Responsive' CSS & stylesheet href
+    ├── head.inc.html             # 'Responsive' CSS goes here
     ├── signature-reply.inc.html  # Simplified signature (loads head)
     ├── signature.html            # Full signature (loads head/footer)
 ```
