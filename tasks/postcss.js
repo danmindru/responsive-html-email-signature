@@ -5,27 +5,14 @@ var gulp = require('gulp'),
     autoprefixer = require('autoprefixer');
 
 function postcssTask(options){
-  gulp.task('postcss', function () {
+  gulp.task('postcss', ['dupe'], function () {
     var processors = [
       autoprefixer({
-        browsers: [
-          'Android',
-          'ChromeAndroid',
-          'FirefoxAndroid',
-          'Opera Mini',
-          'Chrome',
-          'Firefox',
-          'Explorer',
-          'Edge',
-          'iOS',
-          'Opera',
-          'Safari',
-          'ExplorerMobile'
-        ]
+        browsers: ['last 5 versions']
       })
     ];
 
-    return gulp.src(options.workingDir + '/*.css')
+    return gulp.src(options.workingDir + '/**/*.css')
       .pipe(postcss(processors))
       .pipe(gulp.dest(options.workingDir));
   });
