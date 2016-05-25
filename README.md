@@ -1,14 +1,3 @@
-#Future release notes & todo
-This is a beta release, some things still need to be done before it's ready.
-
-##Todo
-- use fs-extra instead of wrench
-
-##Doc updates
-- Stylesheets are included automatically, place them wherever in the dir
-- Autoprefixer is there to help
-- use SASS, LESS or postcss.
-
 # Responsive HTML email signature(s)
 ### Let's punch email clients in the stomach!
 When you need some basic responsive email signatures that work on mobile.<br/>
