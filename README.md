@@ -16,7 +16,7 @@ Here's how the samples look:
 
 ## Motivation
 Let's make writing HTML emails & email signatures easier. We won't fix all email clients, but we can surely make our lives easier with some neat automation. <br/>
-See a fairly comprehensive rant on the subject (and not only) [in this article](http://fadeit.dk/blog/post/html-emails-and-email-signatures-how-hard-can-it-be).
+See a fairly comprehensive rant on the subject (and not only) [in this article](https://fadeit.dk/blog/post/html-emails-and-email-signatures-how-hard-can-it-be).
 
 
 ## What does it do
@@ -77,7 +77,7 @@ You are of course encouraged to change the default structure for your use case.
 ## Overview of the build process
 The diagram below shows what happens to your email templates.
 Each folder in 'src' is considered a `template group`. A template file will be generated for each of the configuration objects you add have in the template group -> `conf.js`.
-![Responsive HTML email template/signatures diagram](http://fadeit.dk/posts/html-emails-and-email-signatures-how-hard-can-it-be/html-responsive-email-template-build-diagram.png)
+![Responsive HTML email template/signatures diagram](https://fadeit.dk/posts/html-emails-and-email-signatures-how-hard-can-it-be/html-responsive-email-template-build-diagram.png)
 
 
 ## CSS Support
@@ -158,8 +158,8 @@ Unfortnately, Outlook 2010 client dosen't support HTML file import features for 
 
 ===================
 <br/>
-<a href="http:fadeit.dk"><img src="http://fadeit.dk/src/assets/img/brand/fadeit_logo_full.svg" alt="The fadeit logo" style="width:200px;"/></a><br/><br/>
+<a href="http:fadeit.dk"><img src="https://fadeit.dk/src/assets/img/brand/fadeit_logo_full.svg" alt="The fadeit logo" style="width:200px;"/></a><br/><br/>
 
 ####About fadeit
 We build awesome software, web and mobile applications.
-See more at [fadeit.dk](http://fadeit.dk)
+See more at [fadeit.dk](https://fadeit.dk)
