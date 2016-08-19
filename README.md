@@ -29,6 +29,7 @@ See a fairly comprehensive rant on the subject (and not only) [in this article](
 - [x] can build templates from multiple sources
 - [x] watches HTML / CSS files for changes and re-builds
 - [x] supports LESS / SASS / PostCSS 
+- [x] autoprefixer, so you don't have to worry about your `-moz-`s or `-webkit-`s 
 
 **Some mail clients don't support them, so an external URL might be a good idea. Also, some clients might complain about the size, so keep an eye out.*
 
@@ -40,6 +41,7 @@ $ gulp # By default, HTML & CSS files in './src' will be watched for changes
 ```
 
 Take a look at `src/light/` for an example. Copy / Paste, rename it and change `src/light/conf.js` to suite your needs. Run `gulp` to build the templates (into `/dist`).
+> NB: Stylesheets are included automatically, place them wherever in the directory.
 
 ## Template structure (examples)
 There are 2 examples of template structures, one for the `light` email template and one for the `dark` one.
