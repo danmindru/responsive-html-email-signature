@@ -12,7 +12,7 @@ Here's how the samples look:
 ![responsive emails-02](https://cloud.githubusercontent.com/assets/1515742/10591901/139c4954-76b9-11e5-80f7-5b0ccaf5af81.png)
 
 ## Read the docs in other languages
-[Read the docs in Korean!](/README_kor.md)
+[Read the docs in Korean!](/i18n/ko-KR.md)
 
 ## Motivation
 Let's make writing HTML emails & email signatures easier. We won't fix all email clients, but we can surely make our lives easier with some neat automation. <br/>
