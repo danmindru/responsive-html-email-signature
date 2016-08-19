@@ -31,6 +31,7 @@
     "gulp-david": "~0.4.2",
     "gulp-inline-css": "~3.1.0",
     "gulp-inline-image-html": "~0.2.1",
+    "gulp-jsonlint": "^1.1.2",
     "gulp-less": "^3.1.0",
     "gulp-minify-html": "~1.0.5",
     "gulp-minify-inline": "~0.2.1",

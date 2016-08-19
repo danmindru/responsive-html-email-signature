@@ -10,10 +10,11 @@ var gulp = require('gulp'),
     fs = require('fs'),
     Q = require('q'),
     del = require('del'),
+    jsonlint = require('jsonlint'),
     inlineimg = require('gulp-inline-image-html');
 
 function buildTask(options){
-  gulp.task('build', ['dupe', 'less', 'sass', 'postcss'], function build() {
+  gulp.task('build', ['dupe', 'less', 'sass', 'postcss', 'lint'], function build() {
     /** Makes templates for a given directory & its configurations.
      * @function makeTemplates
      * @param {String} dir Directory to make templates from.
@@ -86,11 +87,11 @@ function buildTask(options){
           .readdirSync('./' + options.workingDir)
           .forEach(function readConfigurations(dir){
             /** NB: For 'watch' to properly work, the cache needs to be deleted before each require. */
-            var confPath = '../tmp/' + dir + '/conf.js';
-            delete require.cache[require.resolve(confPath)];
-            promises.push(makeTemplates(dir, require(confPath)));
-          });
+            var confPath = '../tmp/' + dir + '/conf.json';
 
+            delete require.cache[require.resolve(confPath)];
+            promises.push(makeTemplates(dir, require(confPath).persons));
+          });
 
         Q.all(promises);
       });
