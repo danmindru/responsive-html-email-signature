@@ -1,18 +1,18 @@
 # Responsive HTML email signature(s)
-### Let's punch email clients in the stomach!
+### Let's punch email clients in the stomach 👊
 When you need some basic responsive email signatures that work on mobile.<br/>
 ...and your colleagues need them too.<br/>
 ...but you don't want to deal with tables and inline styles.
 
 
 ## Preview
-Here's how the samples look:
+Here are some examples:
 
 ![responsive emails-01](https://cloud.githubusercontent.com/assets/1515742/10591900/13889d32-76b9-11e5-8dc0-b89d80189e93.png)
 ![responsive emails-02](https://cloud.githubusercontent.com/assets/1515742/10591901/139c4954-76b9-11e5-80f7-5b0ccaf5af81.png)
 
 ## Read the docs in other languages
-[Read the docs in Korean!](/i18n/ko-KR.md)
+[Go here](/i18n). You are welcome to add your own language 😋
 
 ## Motivation
 Let's make writing HTML emails & email signatures easier. We won't fix all email clients, but we can surely make our lives easier with some neat automation. <br/>
@@ -27,7 +27,8 @@ See a fairly comprehensive rant on the subject (and not only) [in this article](
 - [x] minifies the template
 - [x] media queries for mail clients that support them
 - [x] can build templates from multiple sources
-- [x] watches HTML/CSS files for changes and re-builds
+- [x] watches HTML / CSS files for changes and re-builds
+- [x] supports LESS / SASS / PostCSS 
 
 **Some mail clients don't support them, so an external URL might be a good idea. Also, some clients might complain about the size, so keep an eye out.*
 
