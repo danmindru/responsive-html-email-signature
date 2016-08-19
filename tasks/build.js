@@ -88,9 +88,11 @@ function buildTask(options){
           .forEach(function readConfigurations(dir){
             /** NB: For 'watch' to properly work, the cache needs to be deleted before each require. */
             var confPath = '../tmp/' + dir + '/conf.json';
+            var current = null;
 
             delete require.cache[require.resolve(confPath)];
-            promises.push(makeTemplates(dir, require(confPath).persons));
+            current = require(confPath);
+            promises.push(makeTemplates(dir, current.persons || [current]));
           });
 
         Q.all(promises);
