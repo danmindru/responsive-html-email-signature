@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
-    wrench = require('wrench'),
+    fs = require('fs'),
     plumber = require('gulp-plumber');
 
 var options = {
@@ -17,8 +17,8 @@ var options = {
  * Look for .js & .coffee files.
  * Each file should correspond to a task.
  */
-wrench
-  .readdirSyncRecursive('./tasks')
+fs
+  .readdirSync('./tasks')
   .filter(function readJSFiles(file) {
     return (/\.(js|coffee)$/i).test(file);
   })

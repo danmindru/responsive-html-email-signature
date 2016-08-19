@@ -1,6 +1,6 @@
 {
   "name": "responsive-html-email-signature",
-  "version": "4.0.0-rc.1",
+  "version": "4.0.0-rc.2",
   "description": "Responsive template for email signatures",
   "main": "index.js",
   "scripts": {
@@ -22,9 +22,10 @@
     "url": "https://github.com/fadeit/responsive-html-email-signature/issues"
   },
   "homepage": "https://github.com/fadeit/responsive-html-email-signature#readme",
-  "devDependencies": {
+  "dependencies": {
     "autoprefixer": "^6.3.6",
     "del": "^2.2.0",
+    "fs-extra": "^0.30.0",
     "gulp": "~3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-david": "~0.4.2",
@@ -38,8 +39,6 @@
     "gulp-preprocess": "~2.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.1",
-    "q": "~1.4.1",
-    "wrench": "~1.5.8"
-  },
-  "dependencies": {}
+    "q": "~1.4.1"
+  }
 }
