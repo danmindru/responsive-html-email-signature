@@ -4,28 +4,34 @@ When you need some basic responsive email signatures that work on mobile.<br/>
 ...and your colleagues need them too.<br/>
 ...but you don't want to deal with tables and inline styles.
 
+[Read the docs in other languages](/i18n) ↗️
+
 
 ## Preview
 Here are some examples:
-
 ![responsive emails-01](https://cloud.githubusercontent.com/assets/1515742/10591900/13889d32-76b9-11e5-8dc0-b89d80189e93.png)
 ![responsive emails-02](https://cloud.githubusercontent.com/assets/1515742/10591901/139c4954-76b9-11e5-80f7-5b0ccaf5af81.png)
 
-## Read the docs in other languages
-[Go here](/i18n). You are welcome to add your own language 😋
+## Getting started
+- Clone repo & run `yarn` or `npm install`
+- Edit files in */templates* and run `gulp` to build them into *./dist*
+- Open files from `./dist` in your fav browser to check them out
+
+> When you're done, check out [how to add them to your email client of choice](#usage-with-different-email-clients) if in doubt.
+
 
 ## Motivation
-Let's make writing HTML emails & email signatures easier. We won't fix all email clients, but we can surely make our lives easier with some neat automation. <br/>
-See a fairly comprehensive rant on the subject (and not only) [in this article](https://fadeit.dk/blog/post/html-emails-and-email-signatures-how-hard-can-it-be).
+Writing HTML emails & email signatures sucks. Let's make it easier. We can't fix all email clients, but we can surely make our lives easier with some automation. <br/>
+> See a fairly comprehensive rant on the subject (and not only) [in this article](https://fadeit.dk/blog/post/html-emails-and-email-signatures-how-hard-can-it-be).
 
 
-## What does it do
-- [x] config-based template generation
-- [x] allows generating multiple templates (for your colleagues too!)
+## What does this pile of code do
+- [x] generates email templates from your config
+- [x] allows generating multiple templates at once (for your colleagues too!)
 - [x] transforms linked (`<link>`) CSS into inline styles
 - [x] embeds local `img[src]` into the template (base64).*
 - [x] minifies the template
-- [x] media queries for mail clients that support them
+- [x] ads some basic media queries for mail clients that support them
 - [x] can build templates from multiple sources
 - [x] watches HTML / CSS files for changes and re-builds
 - [x] supports LESS / SASS / PostCSS 
@@ -34,14 +40,71 @@ See a fairly comprehensive rant on the subject (and not only) [in this article](
 **Some mail clients don't support them, so an external URL might be a good idea. Also, some clients might complain about the size, so keep an eye out.*
 
 
-## Getting started
+## Docs
+### Installing
 ```bash
-$ npm install
+$ yarn # or npm install
 $ gulp # By default, HTML & CSS files in './src' will be watched for changes
 ```
 
-Take a look at `src/light/` for an example. Copy / Paste, rename it and change `src/light/conf.js` to suite your needs. Run `gulp` to build the templates (into `/dist`).
-> NB: Stylesheets are included automatically, place them wherever in the directory.
+### Configuring
+To make a basic email from existing templates, you only have to edit the `conf.json` file in each template.
+
+For example, the dark template accepts the following:
+```json
+{
+  "id": "<will-be-used-for-filename>",
+  "signature": "<signature-of-chiice>",
+  "name": "<your-name>",
+  "contactMain": "<phone-or-email-or-html>",
+  "contactMail": "<email>",
+  "slogan": "<a-basic-slogan>",
+  "logoUrl": "</assets/dark.png?",
+  "logoAlt": "<text-in-case-logo-is-blocked>",
+  "website": "<http://dark.dk>"
+}
+```
+
+### Generating multiple emails from the same config (for your colleagues too!)
+Use an array instead of object in `conf.json`, having multiple configs like the one above:
+```json
+[
+  {...conf1},
+  {...conf2}
+]
+```
+
+### Using config values in HTML
+Config variables are be made available in all HTML files. <br/>
+Add any variable to the configuration file and use it in HTML like so:
+
+```markup
+<p><!-- @echo yourCustomVariable --></p>
+```
+
+> NB: config variables accept HTML.
+
+### Adding CSS & pre-processing
+Any number of CSS, SASS or LESS in a template directory & they will be automatically processed & inlined into the files outputed in `./dist`.
+
+
+### Multiple emails in the same template
+Templates can contain multiple HTML files from which to build emails. For example, the dark template has `signature.html` and `signature-reply.html`, which is a simpler version. 
+
+Each HTML file will be treated as an email template, except for `*.inc.html`. See below ⬇️
+
+
+### Partials (*.inc.html)
+If you indeed have multiple emails in the same templates, you can be sure some of the HTML repeats. 
+
+Luckily, partials can be used for common parts (i.e. headers, footers). 
+
+Partials *will not* be treated as a email template, but ignored when built. They can however be included in other HTML files, like so:
+```markup
+<section>
+<!-- @include footer.inc.html -->
+</section
+```
 
 ## Template structure (examples)
 There are 2 examples of template structures, one for the `light` email template and one for the `dark` one.
@@ -91,7 +154,7 @@ Some bonuses of using `gulp-inline-css`: many css props will be converted to att
 For more details take a look at the [inline-css mappings](https://github.com/jonkemp/inline-css/blob/master/lib/setTableAttrs.js).
 
 
-## Usage with different e-mail clients
+## Usage with different email clients
 ### Thunderbird
 There are several Thunderbird plugins which can automatically insert signatures when composing e-mails. We recommend [SmartTemplate4](https://addons.mozilla.org/en-us/thunderbird/addon/smarttemplate4) as one of the options. It can use different templates for new e-mails, replies and forwarded e-mails.
 

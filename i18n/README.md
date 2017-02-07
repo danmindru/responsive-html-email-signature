@@ -4,6 +4,7 @@ The [main README](https://github.com/fadeit/responsive-html-email-signature) is 
 
 *Available translations are:*
 - [Korean](ko-KR.md) by [JooHyung Park](https://github.com/dusskapark) 
+- [Romanian](ro-RO.md) by [Dan Mindru](https://github.com/danmindru) 
 
 ##Contributing
 You're very welcome to contribute & maintain translations.
