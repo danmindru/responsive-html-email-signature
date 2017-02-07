@@ -78,7 +78,7 @@ Use an array instead of object in `conf.json`, having multiple configs like the 
 Config variables are be made available in all HTML files. <br/>
 Add any variable to the configuration file and use it in HTML like so:
 
-```markup
+```html
 <p><!-- @echo yourCustomVariable --></p>
 ```
 
@@ -100,7 +100,7 @@ If you indeed have multiple emails in the same templates, you can be sure some o
 Luckily, partials can be used for common parts (i.e. headers, footers). 
 
 Partials *will not* be treated as a email template, but ignored when built. They can however be included in other HTML files, like so:
-```markup
+```html
 <section>
 <!-- @include footer.inc.html -->
 </section
