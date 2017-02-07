@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber');
 
 var options = {
-  source: 'src',
+  source: 'templates',
   dist: 'dist',
   workingDir: 'tmp',
   src: function plumbedSrc(){

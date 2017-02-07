@@ -6,7 +6,7 @@ var gulp = require('gulp'),
     minifyInline = require('gulp-minify-inline'),
     preprocess = require('gulp-preprocess'),
     rename = require('gulp-rename'),
-    fsx = require('fs-extra'),
+    klaw = require('klaw'),
     fs = require('fs'),
     Q = require('q'),
     del = require('del'),
@@ -29,8 +29,7 @@ function buildTask(options){
          * Find stylesheets relative to the CWD & generate <link> tags.
          * This way we can automagically inject them into <head>.
          */
-        fsx
-          .walk(cwd)
+        klaw(cwd)
           .on('readable', function walkTemplateDir() {
             var stylesheet;
 
@@ -89,14 +88,22 @@ function buildTask(options){
             /** NB: For 'watch' to properly work, the cache needs to be deleted before each require. */
             var confPath = '../tmp/' + dir + '/conf.json';
             var current = null;
+            var confItems;
 
             delete require.cache[require.resolve(confPath)];
             current = require(confPath);
-            promises.push(makeTemplates(dir, current.persons || [current]));
+            if (current && current.length) {
+              confItems = [...current]
+            } else {
+              confItems = [current]
+            }
+
+            promises.push(makeTemplates(dir, confItems));
           });
 
         Q.all(promises);
-      });
+      })
+      .catch(function (err) { console.log(err) })
   });
 }
 

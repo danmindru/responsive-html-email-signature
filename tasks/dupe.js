@@ -8,7 +8,7 @@ function dupeTask(options){
     del.sync([options.workingDir]);
 
     return options
-      .src(['src/**/*'])
+      .src([options.source + '/**/*'])
       .pipe(gulp.dest('./' + options.workingDir));
   });
 }
