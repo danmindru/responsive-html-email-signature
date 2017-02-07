@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Responsive HTML emails & emails signature</title>
+    <meta name="description" content="Automate the creation of HTML emails and email signatures. Generate multiple emails for your colleagues, friends or enemies too!">
+
+    <style>
+      html, body, div, span, applet, object, iframe,
+      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+      a, abbr, acronym, address, big, cite, code,
+      del, dfn, em, img, ins, kbd, q, s, samp,
+      small, strike, strong, sub, sup, tt, var,
+      b, u, i, center,
+      dl, dt, dd, ol, ul, li,
+      fieldset, form, label, legend,
+      table, caption, tbody, tfoot, thead, tr, th, td,
+      article, aside, canvas, details, embed,
+      figure, figcaption, footer, header, hgroup,
+      menu, nav, output, ruby, section, summary,
+      time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+        box-sizing: border-box;
+      }
+      /* HTML5 display-role reset for older browsers */
+      article, aside, details, figcaption, figure,
+      footer, header, hgroup, menu, nav, section {
+        display: block;
+      }
+      body {
+        line-height: 1;
+      }
+      ol, ul {
+        list-style: none;
+      }
+      blockquote, q {
+        quotes: none;
+      }
+      blockquote:before, blockquote:after,
+      q:before, q:after {
+        content: '';
+        content: none;
+      }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+
+      body {
+        font-size: 12px;
+        background-color: rgb(21, 21, 21);
+      }
+
+      body, h1, h2, h3, h4, h5, h6, p {
+        font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+        font-weight: 300;
+        color: white;
+        margin: 0;
+      }
+
+      p {
+        line-height: 1.3em;
+      }
+
+      h1 { font-size: 3em; }
+      h2 { font-size: 2.2em; }
+      h3 { font-size: 1.8em; margin-bottom: 0.3em; }
+
+      img {
+        max-width: 100%;
+      }
+
+      .dark { min-height: 430px; }
+      .light { min-height: 350px; }
+
+      iframe {
+        border: 0;
+      }
+
+      header {
+        min-height: 100vh;
+        padding: 5em;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+      }
+
+      header h1 {
+        max-width: 600px;
+      }
+
+      header a {
+        opacity: 0.7;
+        font-size: 1.2em;
+        color: white;
+        text-decoration: none;
+        font-weight: 300;
+        border: 1px solid white;
+        border-radius: 4px;
+        max-width: 280px;
+        margin-top: 2em;
+        padding: 1em 2em;
+        text-align: center;
+        display: inline-block;
+        line-height: 1.2em;
+        transition: opacity 0.3s;
+      }
+
+      header a:hover,
+      header a:focus {
+        opacity: 1;
+        transition: opacity 0.3s;
+      }
+
+      figure {
+        margin-top: -60px;
+        display: flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+      }
+      figure svg { height: 60px; width: 40px; }
+
+      footer {
+        padding: 5em;
+      }
+
+      footer a {
+        opacity: 0.7;
+        font-size: 1em;
+        color: white;
+        text-decoration: none;
+        font-weight: 300;
+        border: 1px solid white;
+        border-radius: 4px;
+        max-width: 280px;
+        margin-top: 2em;
+        padding: 0.6em 1em;
+        text-align: center;
+        display: inline-block;
+        line-height: 1.2em;
+        transition: opacity 0.3s;
+      }
+
+      footer a:hover,
+      footer a:focus {
+        opacity: 1;
+        transition: opacity 0.3s;
+      }
+
+      @media only screen and (min-width: 767px) {
+        header {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>HTML emails & email signatures should be easier than this.</h1>
+      <a href="https://github.com/fadeit/responsive-html-email-signature">Get started on Github</a>
+    </header>
+
+    <figure>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+        <path fill="white" d="M349.7,322.2c-3.1-3.1-8-3-11.3,0L264,388.6V104c0-4.4-3.6-8-8-8c-4.4,0-8,3.6-8,8v284.6l-74.4-66.3
+        c-3.4-2.9-8.1-3.2-11.2-0.1c-3.1,3.1-3.3,8.5-0.1,11.4c0,0,87,79.2,88,80s2.8,2.4,5.7,2.4s4.9-1.6,5.7-2.4s88-80,88-80
+        c1.5-1.5,2.3-3.6,2.3-5.7C352,325.8,351.2,323.8,349.7,322.2z"/>
+      </svg>
+    </figure>
+
+    <main>
+      <img src="https://cloud.githubusercontent.com/assets/1515742/10591901/139c4954-76b9-11e5-80f7-5b0ccaf5af81.png" alt="Email / email signature HTML template dark">
+      <img src="https://cloud.githubusercontent.com/assets/1515742/10591900/13889d32-76b9-11e5-8dc0-b89d80189e93.png" alt="Email / email signature HTML template white">
+    </main>
+
+    <footer>
+      <h3>HTML emails, please.</h3>
+      <p>
+        Grab the code on Github to simplify how HTML emails are built.
+      </p>
+      <a href="https://github.com/fadeit/responsive-html-email-signature">Get started on Github</a>
+    </footer>
+
+    <!-- can do demos later! -->
+    <!-- <iframe class="dark" src="./dist/dark/signature-dark.html"></iframe>
+    <iframe class="light" src="./dist/light/signature-light.html"></iframe> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.27/webfontloader.js"></script>
+    <script>
+      WebFontLoader.load({
+        active () {
+          const body = document.querySelector('body')
+          if (body) body.style.fontFamily = 'Roboto, -apple-system, BlinkMacSystemFont, Arial, sans-serif'
+        }
+        google: {
+          families: ['Roboto:300,400']
+        }
+      })
+    </script>
+  </body>
+</html>
