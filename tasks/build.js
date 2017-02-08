@@ -11,7 +11,8 @@ var gulp = require('gulp'),
     Q = require('q'),
     del = require('del'),
     jsonlint = require('jsonlint'),
-    inlineimg = require('gulp-inline-image-html');
+    inlineimg = require('gulp-inline-image-html'),
+    path = require('path');
 
 function buildTask(options){
   gulp.task('build', ['dupe', 'less', 'sass', 'postcss', 'lint'], function build() {
@@ -44,8 +45,9 @@ function buildTask(options){
                 /* Read only CSS files. */
                 return (file.match(/.*\.css/)) ? true : false;
               })
-              .reduce(function(prev, current, index, acc){
-                return prev += '<link rel="stylesheet" href="' + current + '">';
+              .reduce(function(prev, current, index, acc) {
+                var cssPath = path.win32.basename(current)
+                return prev += '<link rel="stylesheet" href="' + cssPath + '">';
               }, '');
 
             options
