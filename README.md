@@ -54,12 +54,12 @@ For example, the dark template accepts the following:
 ```json
 {
   "id": "<will-be-used-for-filename>",
-  "signature": "<signature-of-chiice>",
+  "signature": "<signature-of-choice>",
   "name": "<your-name>",
   "contactMain": "<phone-or-email-or-html>",
   "contactMail": "<email>",
   "slogan": "<a-basic-slogan>",
-  "logoUrl": "</assets/dark.png?",
+  "logoUrl": "</assets/dark.png?>",
   "logoAlt": "<text-in-case-logo-is-blocked>",
   "website": "<http://dark.dk>"
 }
