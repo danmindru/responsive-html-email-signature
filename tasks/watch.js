@@ -10,7 +10,7 @@ function watchTask(options){
         options.source + '/**/*.css',
         options.source + '/**/*.scss',
         options.source + '/**/*.less',
-        options.source + '/**/conf.js'
+        options.source + '/**/conf.json'
       ],
       ['dupe', 'less', 'sass', 'postcss', 'build']
     );
