@@ -1,12 +1,12 @@
-#Translated docs
+# Translated docs
 
 The [main README](https://github.com/fadeit/responsive-html-email-signature) is always going to be the most up-to-date, so if something doesn't add up, take a look there.
 
 *Available translations are:*
 - [Korean](ko-KR.md) by [JooHyung Park](https://github.com/dusskapark) 
-- [Romanian](ro-RO.md) by [Dan Mindru](https://github.com/danmindru) 
+<!-- SOON! - [Romanian](ro-RO.md) by [Dan Mindru](https://github.com/danmindru) -->
 
-##Contributing
+## Contributing
 You're very welcome to contribute & maintain translations.
 Mini-guide:
 
