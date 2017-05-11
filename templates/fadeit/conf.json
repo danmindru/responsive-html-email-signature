@@ -1,0 +1,72 @@
+[
+  {
+    "id": "dan",
+    "signature": "Med venlig hilsen / best regards,",
+    "name": "Dan Mindru",
+    "position": "Interaction Designer",
+    "welcome": "Hi there,",
+    "introParagraph": "Thank your for your message.",
+    "contactMain": "Call <a href='tel:004552783387'><span>(+45) 52783387</span></a> or email me at",
+    "contactMail": "dm@fadeit.dk",
+    "contactSecondary": "<a href='https://goo.gl/maps/9ENsvuF6TjP2'><span>Thorsagervej 11-13, 8550 Ryomgård, Denmark</span></a>",
+    "logoUrl": "https://fadeit.dk/src/assets/img/brand/fadeit-logo.png",
+    "logoAlt": "fadeit logo",
+    "website": "https://fadeit.dk"
+  },
+  {
+    "id": "lars",
+    "signature": "Med venlig hilsen / best regards,",
+    "name": "Lars Normark Holmgaard",
+    "position": "CEO",
+    "welcome": "Hi there,",
+    "introParagraph": "Thank your for your message.",
+    "contactMain": "Call <a href='tel:004581100200'><span>(+45) 81100200</span></a> or email me at",
+    "contactMail": "lnh@fadeit.dk",
+    "contactSecondary": "<a href='https://goo.gl/maps/9ENsvuF6TjP2'><span>Thorsagervej 11-13, 8550 Ryomgård, Denmark</span></a>",
+    "logoUrl": "https://fadeit.dk/src/assets/img/brand/fadeit-logo.png",
+    "logoAlt": "fadeit logo",
+    "website": "https://fadeit.dk"
+  },
+  {
+    "id": "sander",
+    "signature": "Med venlig hilsen / best regards,",
+    "name": "Sander Sink",
+    "position": "Software Developer",
+    "welcome": "Hi there,",
+    "introParagraph": "Thank your for your message.",
+    "contactMain": "Call <a href='tel:003725330876'><span>(+372) 53308767</span></a> or email me at",
+    "contactMail": "ss@fadeit.dk",
+    "contactSecondary": "<a href='https://goo.gl/maps/9ENsvuF6TjP2'><span>Thorsagervej 11-13, 8550 Ryomgård, Denmark</span></a>",
+    "logoUrl": "https://fadeit.dk/src/assets/img/brand/fadeit-logo.png",
+    "logoAlt": "fadeit logo",
+    "website": "https://fadeit.dk"
+  },
+  {
+    "id": "justas",
+    "signature": "Med venlig hilsen / best regards,",
+    "name": "Justas Azna",
+    "position": "Software Engineer",
+    "welcome": "Hi,",
+    "introParagraph": "Thank your for your message.",
+    "contactMain": "Call <a href='tel:004581101101'><span>(+45) 81101101</span></a> or email me at",
+    "contactMail": "ja@fadeit.dk",
+    "contactSecondary": "<a href='https://goo.gl/maps/9ENsvuF6TjP2'><span>Thorsagervej 11-13, 8550 Ryomgård, Denmark</span></a>",
+    "logoUrl": "https://fadeit.dk/src/assets/img/brand/fadeit-logo.png",
+    "logoAlt": "fadeit logo",
+    "website": "https://fadeit.dk"
+  },
+  {
+    "id": "mie",
+    "signature": "Med venlig hilsen / best regards,",
+    "name": "Mie Bøgh Noes",
+    "position": "Bogholderi",
+    "welcome": "Hej,",
+    "introParagraph": "Thank your for your message.",
+    "contactMain": "Call <a href='tel:004581100200'><span>(+45) 81100200</span></a> or email me at",
+    "contactMail": "mbn@fadeit.dk",
+    "contactSecondary": "<a href='https://goo.gl/maps/9ENsvuF6TjP2'><span>Thorsagervej 11-13, 8550 Ryomgård, Denmark</span></a>",
+    "logoUrl": "https://fadeit.dk/src/assets/img/brand/fadeit-logo.png",
+    "logoAlt": "fadeit logo",
+    "website": "https://fadeit.dk"
+  }
+]
