@@ -137,6 +137,6 @@ start Signatures
 <br/>
 <a href="http:fadeit.dk"><img src="http://fadeit.dk/src/assets/img/brand/fadeit_logo_full.svg" alt="The fadeit logo" style="width:200px;"/></a><br/><br/>
 
-####About fadeit
+#### About fadeit
 We build awesome software, web and mobile applications.
 See more at [fadeit.dk](http://fadeit.dk)
