@@ -222,7 +222,7 @@ Unfortnately, Outlook 2010 client dosen't support HTML file import features for 
 
 > **NB**: base 64 will not be shown on Outlook 2010 client. So, I recommend to use external url if you want to use images. 
 
-===================
+------------------------------
 
 <br/>
 <a href="http:fadeit.dk"><img src="https://fadeit.dk/src/assets/img/brand/fadeit_logo_full.svg" alt="The fadeit logo" style="width:200px;"/></a><br/><br/>
