@@ -34,8 +34,8 @@ Writing HTML emails & email signatures sucks. Let's make it easier. We can't fix
 - [x] ads some basic media queries for mail clients that support them
 - [x] can build templates from multiple sources
 - [x] watches HTML / CSS files for changes and re-builds
-- [x] supports LESS / SASS / PostCSS 
-- [x] autoprefixer, so you don't have to worry about your `-moz-`s or `-webkit-`s 
+- [x] supports LESS / SASS / PostCSS
+- [x] autoprefixer, so you don't have to worry about your `-moz-`s or `-webkit-`s
 
 **Some mail clients don't support them, so an external URL might be a good idea. Also, some clients might complain about the size, so keep an eye out.*
 
@@ -46,6 +46,8 @@ Writing HTML emails & email signatures sucks. Let's make it easier. We can't fix
 $ yarn # or npm install
 $ gulp # By default, HTML & CSS files in './src' will be watched for changes
 ```
+
+> Note: it's built using node v7.x, so please make sure your node version is up to date. Version 6+ should be fine.
 
 ### Configuring
 To make a basic email from existing templates, you only have to edit the `conf.json` file in each template.
@@ -89,15 +91,15 @@ Any number of CSS, SASS or LESS in a template directory & they will be automatic
 
 
 ### Multiple emails in the same template
-Templates can contain multiple HTML files from which to build emails. For example, the dark template has `signature.html` and `signature-reply.html`, which is a simpler version. 
+Templates can contain multiple HTML files from which to build emails. For example, the dark template has `signature.html` and `signature-reply.html`, which is a simpler version.
 
 Each HTML file will be treated as an email template, except for `*.inc.html`. See below ⬇️
 
 
 ### Partials (*.inc.html)
-If you indeed have multiple emails in the same templates, you can be sure some of the HTML repeats. 
+If you indeed have multiple emails in the same templates, you can be sure some of the HTML repeats.
 
-Luckily, partials can be used for common parts (i.e. headers, footers). 
+Luckily, partials can be used for common parts (i.e. headers, footers).
 
 Partials *will not* be treated as a email template, but ignored when built. They can however be included in other HTML files, like so:
 ```html
@@ -127,13 +129,13 @@ Here's how the light one looks:
 ├── light
     ├── conf.js                   # Template strings, logo, etc.
     ├── footer.inc.html           # Contact info & logo
-    ├── full-mail.html            # Body + signature 
+    ├── full-mail.html            # Body + signature
     ├── head.inc.html             # 'Responsive' CSS goes here
     ├── signature-reply.inc.html  # Simplified signature (loads head)
     ├── signature.html            # Full signature (loads head/footer)
 ```
 
-Files are included via [gulp-preprocess](https://www.npmjs.com/package/gulp-preprocess). 
+Files are included via [gulp-preprocess](https://www.npmjs.com/package/gulp-preprocess).
 
 There's one convention you have to keep in mind: `all files that you wish to include should follow the *.inc.html format`. The gulp task ignores `*.inc.html` files, but will try to process & create email templates from all `.html` files.
 
@@ -197,8 +199,8 @@ If you are using iCloud drive or having problems with it, you might also want to
 
 ### Outlook 2010 Client for Windows 7
 
-#### Solution 1 
-- Open Outlook 2010 and go to `File > Option > Mail > Signature` 
+#### Solution 1
+- Open Outlook 2010 and go to `File > Option > Mail > Signature`
 - Create new signature (with a placeholder for your convenience)
 - Open signature folder using CMD
 
@@ -206,7 +208,7 @@ If you are using iCloud drive or having problems with it, you might also want to
 
 ```
 cd AppData\Roamin\Microsoft
-start Signatures 
+start Signatures
 ```
 
 - Within this folder, find a file named with your placeholder then right click this file and select edit.
@@ -214,13 +216,13 @@ start Signatures
 - Open Outlook again and check your signature
 
 #### Solution 2
-Unfortnately, Outlook 2010 client dosen't support HTML file import features for your email template. But you can add your own signatures by simple Copy and paste like **Solution 2** above. 
+Unfortnately, Outlook 2010 client dosen't support HTML file import features for your email template. But you can add your own signatures by simple Copy and paste like **Solution 2** above.
 
-- Open built html file on `/dist` folder and Ctrl A + C 
-- Open Outlook 2010 and go to `File > Option > Mail > Signature` 
+- Open built html file on `/dist` folder and Ctrl A + C
+- Open Outlook 2010 and go to `File > Option > Mail > Signature`
 - Create new signature and paste copyed one
 
-> **NB**: base 64 will not be shown on Outlook 2010 client. So, I recommend to use external url if you want to use images. 
+> **NB**: base 64 will not be shown on Outlook 2010 client. So, I recommend to use external url if you want to use images.
 
 ------------------------------
 
