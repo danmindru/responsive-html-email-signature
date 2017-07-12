@@ -27,4 +27,4 @@ fs
   });
 
 /** By default templates will be built into '/dist', then gulp will watch for changes in '/src'. */
-gulp.task('default', ['dupe', 'less', 'sass', 'postcss', 'lint', 'build', 'watch']);
+gulp.task('default', ['dupe', 'less', 'sass', 'postcss', 'lint', 'build']);

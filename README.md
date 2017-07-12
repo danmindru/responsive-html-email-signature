@@ -13,8 +13,13 @@ Here are some examples:
 ![responsive emails-02](https://cloud.githubusercontent.com/assets/1515742/10591901/139c4954-76b9-11e5-80f7-5b0ccaf5af81.png)
 
 ## Getting started
+- Clone repo run `git clone git@github.com:fadeit/responsive-html-email-signature.git`
 - Clone repo & run `yarn` or `npm install`
-- Edit files in */templates* and run `gulp` to build them into *./dist*
+- Run `gulp` to generate templates from configuration
+
+### Customizing templates
+- Edit files in */templates*
+- Run `gulp watch` to watch templates and re-generate
 - Open files from `./dist` in your fav browser to check them out
 
 > When you're done, check out [how to add them to your email client of choice](#usage-with-different-email-clients) if in doubt.
