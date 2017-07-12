@@ -13,7 +13,7 @@ Here are some examples:
 ![responsive emails-02](https://cloud.githubusercontent.com/assets/1515742/10591901/139c4954-76b9-11e5-80f7-5b0ccaf5af81.png)
 
 ## Getting started
-- Clone repo run `git clone git@github.com:fadeit/responsive-html-email-signature.git`
+- Clone repo `git clone https://github.com/fadeit/responsive-html-email-signature.git`
 - Clone repo & run `yarn` or `npm install`
 - Run `gulp` to generate templates from configuration
 
