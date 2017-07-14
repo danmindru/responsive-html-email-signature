@@ -14,7 +14,7 @@ Here are some examples:
 
 ## Getting started
 - Clone repo `git clone https://github.com/fadeit/responsive-html-email-signature.git`
-- Clone repo & run `yarn` or `npm install`
+- Run `yarn` or `npm install`
 - Run `gulp` to generate templates from configuration
 
 ### Customizing templates
@@ -82,7 +82,7 @@ Use an array instead of object in `conf.json`, having multiple configs like the 
 ```
 
 ### Using config values in HTML
-Config variables are be made available in all HTML files. <br/>
+Config variables are made available in all HTML files. <br/>
 Add any variable to the configuration file and use it in HTML like so:
 
 ```html
@@ -92,7 +92,7 @@ Add any variable to the configuration file and use it in HTML like so:
 > NB: config variables accept HTML.
 
 ### Adding CSS & pre-processing
-Any number of CSS, SASS or LESS in a template directory & they will be automatically processed & inlined into the files outputed in `./dist`.
+Any number of CSS, SASS or LESS files in a template directory & they will be automatically processed & inlined into the files outputed in `./dist`.
 
 
 ### Multiple emails in the same template
@@ -106,7 +106,7 @@ If you indeed have multiple emails in the same templates, you can be sure some o
 
 Luckily, partials can be used for common parts (i.e. headers, footers).
 
-Partials *will not* be treated as a email template, but ignored when built. They can however be included in other HTML files, like so:
+Partials *will not* be treated as an email template, but ignored when built. They can however be included in other HTML files, like so:
 ```html
 <section>
 <!-- @include footer.inc.html -->
