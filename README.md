@@ -1,7 +1,7 @@
 # Responsive HTML email signature(s)
 [![npm](https://img.shields.io/npm/v/responsive-html-email-signature.svg)](https://www.npmjs.com/package/responsive-html-email-signature)
 [![license](https://img.shields.io/github/license/fadeit/responsive-html-email-signature.svg)](/LICENSE)
-[![Issue Stats](https://img.shields.io/issuestats/p/github/fadeit/responsive-html-email-signature.svg)](/pulls)
+[![Issue Stats](https://img.shields.io/issuestats/p/github/fadeit/responsive-html-email-signature.svg)](https://github.com/fadeit/responsive-html-email-signature/pulls)
 
 ### Let's punch email clients in the stomach 👊
 When you need some basic responsive email signatures that work on mobile.<br/>
