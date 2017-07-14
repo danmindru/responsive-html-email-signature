@@ -1,4 +1,8 @@
 # Responsive HTML email signature(s)
+[![npm](https://img.shields.io/npm/v/responsive-html-email-signature.svg)](https://www.npmjs.com/package/responsive-html-email-signature)
+[![license](https://img.shields.io/github/license/fadeit/responsive-html-email-signature.svg)](/LICENSE)
+[![Issue Stats](https://img.shields.io/issuestats/p/github/fadeit/responsive-html-email-signature.svg)](/pulls)
+
 ### Let's punch email clients in the stomach 👊
 When you need some basic responsive email signatures that work on mobile.<br/>
 ...and your colleagues need them too.<br/>
@@ -13,13 +17,13 @@ Here are some examples:
 ![responsive emails-02](https://cloud.githubusercontent.com/assets/1515742/10591901/139c4954-76b9-11e5-80f7-5b0ccaf5af81.png)
 
 ## Getting started
-- Clone repo `git clone https://github.com/fadeit/responsive-html-email-signature.git`
+- Clone repo `git clone` https://github.com/fadeit/responsive-html-email-signature.git`
 - Run `yarn` or `npm install`
-- Run `gulp` to generate templates from configuration
+- Run `gulp` to generate templates from configuration (one time)
 
 ### Customizing templates
 - Edit files in */templates*
-- Run `gulp watch` to watch templates and re-generate
+- Run `gulp watch` to watch templates and re-generate when changed
 - Open files from `./dist` in your fav browser to check them out
 
 > When you're done, check out [how to add them to your email client of choice](#usage-with-different-email-clients) if in doubt.
