@@ -9,7 +9,10 @@ var options = {
   dist: 'dist',
   workingDir: 'tmp',
   src: function plumbedSrc(){
-    return gulp.src.apply(gulp, arguments).pipe(plumber());
+    return gulp
+      .src
+      .apply(gulp, arguments)
+      .pipe(plumber());
   }
 };
 
@@ -27,4 +30,14 @@ fs
   });
 
 /** By default templates will be built into '/dist', then gulp will watch for changes in '/src'. */
-gulp.task('default', ['dupe', 'less', 'sass', 'postcss', 'lint', 'build']);
+gulp.task(
+  'default', 
+  [
+    'dupe', 
+    'less',
+    'sass',
+    'postcss',
+    'lint',
+    'build'
+  ]
+);
