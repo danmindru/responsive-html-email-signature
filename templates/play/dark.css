@@ -48,7 +48,6 @@ tr{
 }
 
 a{
-  text-decoration: none;
   color: #0fade1;
 }
 
@@ -118,14 +117,14 @@ a{
 }
 
 .footer__main__col1__td{
-  color: #9E9E9E;
+  color: #f5f5f5;
   /* @todo gulp-inline-css doesn't parse align */
   align:left;
   padding-top: 15px;
 }
 
 .footer__main__col1__td > span{
-  font-size:18px;
+  font-size:20px;
   margin-bottom:5px;
 }
 
