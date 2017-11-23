@@ -11,7 +11,7 @@ var gulp = require('gulp'),
     Q = require('q'),
     del = require('del'),
     jsonlint = require('jsonlint'),
-    inlineimg = require('gulp-inline-image-html'),
+    inlineimg = require('gulp-inline-images-no-http'),
     path = require('path');
 
 function buildTask(options){
@@ -50,12 +50,14 @@ function buildTask(options){
                 return prev += '<link rel="stylesheet" href="' + cssPath + '">';
               }, '');
 
+            console.log(cwd)
+
             options
               .src([cwd + '/**/*.html', '!' + cwd + '/**/*.inc.html'])
               .pipe(preprocess({
                 context: conf
               }))
-              .pipe(inlineimg(cwd))
+              .pipe(inlineimg())
               .pipe(inlineCss({
                 applyTableAttributes: true,
                 applyWidthAttributes: true,
