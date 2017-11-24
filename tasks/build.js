@@ -50,8 +50,6 @@ function buildTask(options){
                 return prev += '<link rel="stylesheet" href="' + cssPath + '">';
               }, '');
 
-            console.log(cwd)
-
             options
               .src([cwd + '/**/*.html', '!' + cwd + '/**/*.inc.html'])
               .pipe(preprocess({
