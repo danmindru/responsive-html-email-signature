@@ -1,7 +1,7 @@
 # Responsive HTML email signature(s)
 [![npm](https://img.shields.io/npm/v/responsive-html-email-signature.svg)](https://www.npmjs.com/package/responsive-html-email-signature)
-[![license](https://img.shields.io/github/license/fadeit/responsive-html-email-signature.svg)](/LICENSE)
-[![Issue Stats](https://img.shields.io/issuestats/p/github/fadeit/responsive-html-email-signature.svg)](https://github.com/fadeit/responsive-html-email-signature/pulls)
+[![license](https://img.shields.io/github/license/danmindru/responsive-html-email-signature.svg)](/LICENSE)
+[![Issue Stats](https://img.shields.io/issuestats/p/github/danmindru/responsive-html-email-signature.svg)](https://github.com/danmindru/responsive-html-email-signature/pulls)
 
 ### Let's punch email clients in the stomach 👊
 When you need some basic responsive email signatures that work on mobile.<br/>
@@ -17,8 +17,8 @@ Here are some examples:
 ![responsive emails-02](https://cloud.githubusercontent.com/assets/1515742/10591901/139c4954-76b9-11e5-80f7-5b0ccaf5af81.png)
 
 ## Getting started
-- Clone repo `git clone https://github.com/fadeit/responsive-html-email-signature.git`
-- Run `yarn` or `npm install`
+- Clone repo `git clone https://github.com/danmindru/responsive-html-email-signature.git`
+- Run `npm install`
 - Run `gulp` to generate templates from configuration (one time)
 
 ### Customizing templates
@@ -31,8 +31,6 @@ Here are some examples:
 
 ## Motivation
 Writing HTML emails & email signatures sucks. Let's make it easier. We can't fix all email clients, but we can surely make our lives easier with some automation. <br/>
-> See a fairly comprehensive rant on the subject (and not only) [in this article](https://fadeit.dk/blog/post/html-emails-and-email-signatures-how-hard-can-it-be).
-
 
 ## What does this pile of code do
 - [x] generates email templates from your config
@@ -52,11 +50,11 @@ Writing HTML emails & email signatures sucks. Let's make it easier. We can't fix
 ## Docs
 ### Installing
 ```bash
-$ yarn # or npm install
+$ npm install
 $ gulp # By default, HTML & CSS files in './src' will be watched for changes
 ```
 
-> Note: it's built using node v7.x, so please make sure your node version is up to date. Version 6+ should be fine.
+> Note: it's built using node v8.x, so please make sure your node.js version is up to date. Version 6+ should be fine.
 
 ### Configuring
 To make a basic email from existing templates, you only have to edit the `conf.json` file in each template.
@@ -154,7 +152,7 @@ You are of course encouraged to change the default structure for your use case.
 ## Overview of the build process
 The diagram below shows what happens to your email templates.
 Each folder in 'src' is considered a `template group`. A template file will be generated for each of the configuration objects you add have in the template group -> `conf.js`.
-![Responsive HTML email template/signatures diagram](https://fadeit.dk/posts/html-emails-and-email-signatures-how-hard-can-it-be/html-responsive-email-template-build-diagram.png)
+![Responsive HTML email template/signatures diagram](https://user-images.githubusercontent.com/1515742/45000195-35268300-afc3-11e8-82b4-7507430c48a0.png)
 
 
 ## CSS Support
@@ -233,11 +231,3 @@ Unfortnately, Outlook 2010 client dosen't support HTML file import features for 
 
 > **NB**: base 64 will not be shown on Outlook 2010 client. So, I recommend to use external url if you want to use images.
 
-------------------------------
-
-<br/>
-<a href="http:fadeit.dk"><img src="https://fadeit.dk/src/assets/img/brand/fadeit_logo_full.svg" alt="The fadeit logo" style="width:200px;"/></a><br/><br/>
-
-#### About fadeit
-We build awesome software, web and mobile applications.
-See more at [fadeit.dk](https://fadeit.dk)
