@@ -211,10 +211,10 @@ If you are using iCloud drive or having problems with it, you might also want to
 - Create new signature (with a placeholder for your convenience)
 - Open signature folder using CMD
 
-> As the AppData folder is hidden, I'd recommend you to opne it via CMD.
+> As the AppData folder is hidden, I'd recommend you to open it via CMD.
 
 ```
-cd AppData\Roamin\Microsoft
+cd AppData\Roaming\Microsoft
 start Signatures
 ```
 
