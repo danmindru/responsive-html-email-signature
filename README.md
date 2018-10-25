@@ -10,7 +10,12 @@ When you need some basic responsive email signatures that work on mobile.<br/>
 
 [Read the docs in other languages](/i18n) ↗️
 
-
+## pre-require 
+You will need to install these global modules:
+- npm: 
+  >`npm install npm@latest -g`  
+- Gulp: 
+  > `npm install --global gulp`
 ## Preview
 Here are some examples:
 ![responsive emails-01](https://cloud.githubusercontent.com/assets/1515742/10591900/13889d32-76b9-11e5-8dc0-b89d80189e93.png)
