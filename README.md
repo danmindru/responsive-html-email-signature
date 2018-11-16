@@ -1,7 +1,7 @@
 # Responsive HTML email signature(s)
 [![npm](https://img.shields.io/npm/v/responsive-html-email-signature.svg)](https://www.npmjs.com/package/responsive-html-email-signature)
 [![license](https://img.shields.io/github/license/danmindru/responsive-html-email-signature.svg)](/LICENSE)
-[![Issue Stats](https://img.shields.io/issuestats/p/github/danmindru/responsive-html-email-signature.svg)](https://github.com/danmindru/responsive-html-email-signature/pulls)
+
 
 ### Let's punch email clients in the stomach 👊
 When you need some basic responsive email signatures that work on mobile.<br/>
@@ -167,6 +167,12 @@ For more details take a look at the [inline-css mappings](https://github.com/jon
 ### Thunderbird
 There are several Thunderbird plugins which can automatically insert signatures when composing e-mails. We recommend [SmartTemplate4](https://addons.mozilla.org/en-us/thunderbird/addon/smarttemplate4) as one of the options. It can use different templates for new e-mails, replies and forwarded e-mails.
 
+### Gmail
+Go to your mailbox settings & paste the generated signature.
+> **NB**: Gmail doesn't seem to support inlined (base64) images. You have to use absolute `http(s)//...` from them to load up.
+
+### Office 365 / outlook.live.com
+It's a bit hacky to set up, but possible. See [this issue](https://github.com/danmindru/responsive-html-email-signature/issues/52).
 
 ### Apple Mail / OS X (oh boy)
 
@@ -182,7 +188,7 @@ $ open -a TextEdit ~/Library/Mobile\ Documents/com~apple~mail/Data/V3/MailData/S
 - Replace the `<body>...</body>` and it's contents with the template of your choice. *Don't remove the meta information at the top!*
 - Open Mail.app and compose a new mail. Select the signature from the list to test it out.
 
-**NB**: Images won't appear in the signature preview, but will work fine when you compose a message.
+> **NB**: Images won't appear in the signature preview, but will work fine when you compose a message.
 
 
 #### Solution 2
