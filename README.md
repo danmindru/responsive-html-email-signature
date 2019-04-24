@@ -51,7 +51,8 @@ Writing HTML emails & email signatures sucks. Let's make it easier. We can't fix
 ### Installing
 ```bash
 $ npm install
-$ gulp # By default, HTML & CSS files in './src' will be watched for changes
+$ gulp # or npm run create
+# By default, HTML & CSS files in './templates' will be watched for changes
 ```
 
 > Note: it's built using node v8.x, so please make sure your node.js version is up to date. Version 6+ should be fine.
@@ -120,26 +121,31 @@ There are 2 examples of template structures, one for the `light` email template 
 
 Here's how the dark one looks:
 ```bash
-./src
+./templates
 ├── dark
-    ├── conf.js                   # Template strings, logo, etc.
+    ├── assets
+        ├── dark.png              # Image to embed as base64
+    ├── conf.json                 # Template strings, logo, etc.
     ├── dark.css                  # Stylesheet.
     ├── footer.inc.html           # Contact info & logo
     ├── head.inc.html             # 'Responsive' CSS goes here
-    ├── signature-reply.inc.html  # Simplified signature (loads head)
     ├── signature.html            # Full signature (loads head/footer)
+    ├── signature-reply.html      # Simplified signature (loads head)
 ```
 
 Here's how the light one looks:
 ```bash
-./src
+./templates
 ├── light
-    ├── conf.js                   # Template strings, logo, etc.
+    ├── assets
+        ├── light.png             # Image to embed as base64
+    ├── conf.json                 # Template strings, logo, etc.
     ├── footer.inc.html           # Contact info & logo
     ├── full-mail.html            # Body + signature
     ├── head.inc.html             # 'Responsive' CSS goes here
-    ├── signature-reply.inc.html  # Simplified signature (loads head)
+    ├── light.css                 # Stylesheet.
     ├── signature.html            # Full signature (loads head/footer)
+    ├── signature-reply.html      # Simplified signature (loads head)
 ```
 
 Files are included via [gulp-preprocess](https://www.npmjs.com/package/gulp-preprocess).
@@ -151,7 +157,7 @@ You are of course encouraged to change the default structure for your use case.
 
 ## Overview of the build process
 The diagram below shows what happens to your email templates.
-Each folder in 'src' is considered a `template group`. A template file will be generated for each of the configuration objects you add have in the template group -> `conf.js`.
+Each folder in 'templates' is considered a `template group`. A template file will be generated for each of the configuration objects you add have in the template group -> `conf.js`.
 ![Responsive HTML email template/signatures diagram](https://user-images.githubusercontent.com/1515742/45000195-35268300-afc3-11e8-82b4-7507430c48a0.png)
 
 
