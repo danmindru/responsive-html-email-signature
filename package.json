@@ -49,11 +49,13 @@
   },
   "scripts": {
     "create": "gulp",
-    "deploy": "cp -r dist demo && git push origin `git subtree split --prefix demo develop`:gh-pages --force",
+    "deploy": "npm run test && cp -r dist demo && git push origin `git subtree split --prefix demo develop`:gh-pages --force",
     "test": "node ./node_modules/.bin/ava"
   },
   "devDependencies": {
     "ava": "^2.3.0"
   },
-  "browserslist": ["last 5 versions"]
+  "browserslist": [
+    "last 5 versions"
+  ]
 }
