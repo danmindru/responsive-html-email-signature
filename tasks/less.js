@@ -1,21 +1,23 @@
 'use strict';
 
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     less = require('gulp-less'),
     autoprefixer = require('gulp-autoprefixer'),
     rename = require('gulp-rename');
 
 function lessTask(options){
-  gulp.task('less', ['dupe'], function(){
-    return options
-      .src(options.workingDir + '/**/*.less')
-      .pipe(less())
-      .pipe(autoprefixer({
-        browsers: ['last 5 versions']
-      }))
-      .pipe(rename({ extname: '.css' }))
-      .pipe(gulp.dest(options.workingDir));
-  });
+  // Requires: dupe.
+  gulp.task(
+    'less',
+    function() {
+      return options
+        .src(options.workingDir + '/**/*.less')
+        .pipe(less())
+        .pipe(autoprefixer())
+        .pipe(rename({ extname: '.css' }))
+        .pipe(gulp.dest(options.workingDir));
+    }
+  );
 }
 
 module.exports = lessTask;
