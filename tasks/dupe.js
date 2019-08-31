@@ -1,6 +1,6 @@
 'use strict';
 
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     del = require('del');
 
 function dupeTask(options){
