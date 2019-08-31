@@ -55,7 +55,7 @@ $ gulp # or npm run create
 # By default, HTML & CSS files in './templates' will be watched for changes
 ```
 
-> Note: it's built using node v8.x, so please make sure your node.js version is up to date. Version 6+ should be fine.
+> Note: works well with node v10+. Earlier versions might also work.
 
 ### Configuring
 To make a basic email from existing templates, you only have to edit the `conf.json` file in each template.
