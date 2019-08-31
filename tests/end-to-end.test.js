@@ -1,0 +1,46 @@
+import test from 'ava';
+import fs from 'fs';
+
+test.before((t) => {
+  const { exec } = require('child_process');
+  exec('gulp', (err, stdout, stderr) => {
+    if (err) {
+      console.error('Failed to run gulp', err);
+    }
+  });
+});
+
+test('dark signature output', async (t) => {
+  const expected = fs.readFileSync('./tests/sample/dark/signature-dark.html');
+  const built = fs.readFileSync('./dist/dark/signature-dark.html');
+
+  t.deepEqual(expected, built);
+});
+
+test('dark signature reply output', async (t) => {
+  const expected = fs.readFileSync('./tests/sample/dark/signature-reply-dark.html');
+  const built = fs.readFileSync('./dist/dark/signature-reply-dark.html');
+
+  t.deepEqual(expected, built);
+});
+
+test('light signature output', async (t) => {
+  const expected = fs.readFileSync('./tests/sample/light/signature-light.html');
+  const built = fs.readFileSync('./dist/light/signature-light.html');
+
+  t.deepEqual(expected, built);
+});
+
+test('light signature reply output', async (t) => {
+  const expected = fs.readFileSync('./tests/sample/light/signature-reply-light.html');
+  const built = fs.readFileSync('./dist/light/signature-reply-light.html');
+
+  t.deepEqual(expected, built);
+});
+
+test('light full mail output', async (t) => {
+  const expected = fs.readFileSync('./tests/sample/light/full-mail-light.html');
+  const built = fs.readFileSync('./dist/light/full-mail-light.html');
+
+  t.deepEqual(expected, built);
+});
