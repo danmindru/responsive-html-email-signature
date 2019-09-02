@@ -1,2 +1,2 @@
-demo linguist-vendored
-tests/sample linguist-vendored
+demo/* linguist-vendored
+tests/sample/* linguist-vendored
