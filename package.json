@@ -74,7 +74,7 @@
   "husky": {
     "hooks": {
       "pre-push": "npm test",
-      "pre-commit": "npm run lint && pretty-quick --staged --pattern ./**/*.js"
+      "pre-commit": "npm run lint && ./node_modules/.bin/pretty-quick --staged --pattern ./**/*.js"
     }
   }
 }
