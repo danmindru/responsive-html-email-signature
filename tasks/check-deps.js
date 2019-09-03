@@ -1,13 +1,9 @@
-'use strict';
+const gulp = require('gulp');
+const david = require('gulp-david');
 
-const gulp = require('gulp'),
-    david = require('gulp-david');
-
-function checkDepsTask(){
-  gulp.task('check-deps', function checkDeps(){
-    gulp
-      .src('package.json')
-      .pipe(david());
+function checkDepsTask() {
+  gulp.task('check-deps', function checkDeps() {
+    gulp.src('package.json').pipe(david());
   });
 }
 
