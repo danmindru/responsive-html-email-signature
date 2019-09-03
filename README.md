@@ -198,7 +198,7 @@ There are several Thunderbird plugins which can automatically insert signatures 
 
 Go to your mailbox settings & paste the generated signature.
 
-> **NB**: Gmail doesn't seem to support inlined (base64) images. You have to use absolute `http(s)//...` from them to load up.
+> **NB**: Gmail doesn't seem to support inlined (base64) images. You have to use absolute `http(s)//...`.
 
 ### Office 365 / outlook.live.com
 
