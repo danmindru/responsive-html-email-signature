@@ -44,9 +44,10 @@ function buildTask(options) {
               }
             })
             .on('end', function finishedTemplateDirWalk() {
-              const context = {
-                ...conf,
-                stylesheets: stylesheets
+              const context = Object.assign(
+                conf,
+                {
+                  stylesheets: stylesheets
                   .filter(function filterFiles (file) {
                     /* Read only CSS files. */
                     return file.match(/.*\.css/) ? true : false;
@@ -55,7 +56,8 @@ function buildTask(options) {
                     var cssPath = path.win32.basename(current);
                     return (prev += '<link rel="stylesheet" href="' + cssPath + '">');
                   }, '')
-              }
+                }
+              );
 
               options
                 .src([cwd + '/**/*.html', '!' + cwd + '/**/*.inc.html'])
