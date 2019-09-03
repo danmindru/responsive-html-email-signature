@@ -1,9 +1,7 @@
-'use strict';
-
-const gulp = require('gulp'),
-  autoprefixer = require('gulp-autoprefixer'),
-  sass = require('gulp-sass'),
-  rename = require('gulp-rename');
+const gulp = require('gulp');
+const autoprefixer = require('gulp-autoprefixer');
+const sass = require('gulp-sass');
+const rename = require('gulp-rename');
 
 function sassTask(options) {
   // Requires: dupe.
@@ -13,9 +11,7 @@ function sassTask(options) {
       return options
         .src(options.workingDir + '/**/*.scss')
         .pipe(sass())
-        .pipe(
-          autoprefixer()
-        )
+        .pipe(autoprefixer())
         .pipe(rename({ extname: '.css' }))
         .pipe(gulp.dest(options.workingDir));
     })

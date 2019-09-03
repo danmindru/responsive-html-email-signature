@@ -4,13 +4,15 @@ module.exports = {
     commonjs: true,
     es6: true
   },
-  extends: "standard",
+  extends: ['standard', 'prettier'],
   globals: {
-    Atomics: "readonly",
-    SharedArrayBuffer: "readonly"
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly'
   },
   parserOptions: {
     ecmaVersion: 2018
   },
-  rules: {}
+  rules: {
+    semi: 0
+  }
 };
