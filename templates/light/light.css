@@ -12,56 +12,60 @@ body {
   -webkit-text-size-adjust: none;
 }
 
-tr{
+tr {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   box-sizing: border-box;
   font-size: 14px;
   line-height: 20px;
 }
 
-.rbcc{
+.rbcc {
   /*
    * rbcc -> reset - border - cellspacing - cellpading
    *
    * Resets table attributes.
    */
-  border:0;
-  cellpadding:0;
-  cellspacing:0;
+  border: 0;
+  cellpadding: 0;
+  cellspacing: 0;
 }
 
-.background{
-  width:100%;
-}
-
-.main{
-  width:100%;
-  background-color: #ffffff;
-  padding-top:15px;
-}
-
-.sp{ /* Separator tr; props are actually contained by it's inner element atm. */ }
-
-.sp__inner{
-  padding: 15px 0;
-}
-
-.gray-hr{ /* 100% width light grey line; props are actually contained by inner elements atm. */ }
-
-.gray-hr td{
+.background {
   width: 100%;
 }
 
-.gray-hr hr{
-  border-bottom:1px solid #E4E4E4;
-  border-top:none;
-  margin-bottom:20px;
-  margin-top:20px;
-  color: transparent;
-  background:transparent;
+.main {
+  width: 100%;
+  background-color: #ffffff;
+  padding-top: 15px;
 }
 
-a{
+.sp {
+  /* Separator tr; props are actually contained by it's inner element atm. */
+}
+
+.sp__inner {
+  padding: 15px 0;
+}
+
+.gray-hr {
+  /* 100% width light grey line; props are actually contained by inner elements atm. */
+}
+
+.gray-hr td {
+  width: 100%;
+}
+
+.gray-hr hr {
+  border-bottom: 1px solid #e4e4e4;
+  border-top: none;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: transparent;
+  background: transparent;
+}
+
+a {
   text-decoration: none;
   color: #0fade1;
 }
@@ -71,7 +75,7 @@ a{
  * 2. Content styles.
  * ==================
  */
-.main__welcome{
+.main__welcome {
   color: #000;
   padding: 10px 30px 0 30px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -79,85 +83,84 @@ a{
   line-height: 22px;
 }
 
-.main__content{
+.main__content {
   color: #000;
   padding: 10px 30px 0 30px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
 }
 
-
 /*
  * ================
  * 3. Footer styles.
  * ================
  */
-.footer{
+.footer {
   background-color: #f5f5f5;
   padding: 20px 30px 0px 30px;
   color: #888;
-  border-top: 8px solid #EAEAEA;
+  border-top: 8px solid #eaeaea;
 }
 
-.footer a{
+.footer a {
   color: #888;
 }
 
-.footer--simple{
+.footer--simple {
   padding-bottom: 20px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
-.footer__main{
+.footer__main {
   /* NB: This prop fucks up the width on OS X, needs to be *JUST* attribute. */
-  width:100%;
+  width: 100%;
 }
 
-.footer__main__signature{
+.footer__main__signature {
   font-size: 14px;
   color: #888;
-  /* @todo gulp-inline-css doesn't parse align */
-  align:left;
+  /* @todo gulp-inline-css doesn't parse align; it needs to be duplicated in the HTML template */
+  align: left;
 }
 
-.footer__main__col1{
-  width:70%;
-  margin-bottom:30px;
-  /* @todo gulp-inline-css doesn't parse align */
-  align:left;
+.footer__main__col1 {
+  width: 70%;
+  margin-bottom: 30px;
+  /* @todo gulp-inline-css doesn't parse align; it needs to be duplicated in the HTML template */
+  align: left;
 }
 
-.footer__main__col1__td{
+.footer__main__col1__td {
   font-size: 14px;
   color: #888;
-  /* @todo gulp-inline-css doesn't parse align */
-  align:left;
+  /* @todo gulp-inline-css doesn't parse align; it needs to be duplicated in the HTML template */
+  align: left;
 }
 
-.footer__main a > span{
+.footer__main a > span {
   /* Revert apple blue-link style. */
-  color: #888!important;
-  text-decoration:none!important;
+  color: #888 !important;
+  text-decoration: none !important;
 }
 
-.footer__main__col2{
-  width:30%;
-  /* @todo gulp-inline-css doesn't parse align */
-  align:right;
+.footer__main__col2 {
+  width: 30%;
+  /* @todo gulp-inline-css doesn't parse align; it needs to be duplicated in the HTML template */
+  align: right;
 }
 
-.footer__main__col2__td{
+.footer__main__col2__td {
   font-size: 14px;
   color: #888;
-  /* @todo gulp-inline-css doesn't parse align */
-  align:right;
+  /* @todo gulp-inline-css doesn't parse align; it needs to be duplicated in the HTML template */
+  align: right;
 }
 
-.footer__main__col2__td__img{
+.footer__main__col2__td__img {
   border: 0;
   padding-top: 6px;
-  padding-left:10px;
+  padding-left: 10px;
   max-width: 100%;
-  max-height:38px;
+  max-height: 38px;
   height: auto;
 }
