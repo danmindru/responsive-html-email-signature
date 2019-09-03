@@ -41,16 +41,16 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "klaw": "^3.0.0",
-    "node-sass": "^4.12.0",
-    "q": "^1.5.1"
+    "node-sass": "^4.12.0"
   },
   "resolutions": {
     "graceful-fs": "^4.1.15"
   },
   "scripts": {
-    "create": "gulp",
+    "start": "gulp",
+    "once": "gulp run-pipeline",
     "deploy": "npm run test && cp -r dist demo && git push origin `git subtree split --prefix demo develop`:gh-pages --force",
-    "test": "node ./node_modules/.bin/ava"
+    "test": "npm run once && node ./node_modules/.bin/ava"
   },
   "devDependencies": {
     "ava": "^2.3.0"

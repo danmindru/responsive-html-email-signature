@@ -8,7 +8,6 @@ const gulp = require('gulp'),
   rename = require('gulp-rename'),
   klaw = require('klaw'),
   fs = require('fs'),
-  Q = require('q'),
   del = require('del'),
   jsonlint = require('jsonlint'),
   inlineimg = require('gulp-inline-images-no-http'),
@@ -19,7 +18,9 @@ function buildTask(options) {
   gulp.task(
     'build',
     function build(done) {
-      /** Makes templates for a given directory & its configurations.
+      /**
+       * Makes templates for a given directory & its configurations.
+       *
        * @function makeTemplates
        * @param {String} dir Directory to make templates from.
        * @param {Array} confItems A list of configurations objects (usually persons) to make templates from.
@@ -43,22 +44,23 @@ function buildTask(options) {
               }
             })
             .on('end', function finishedTemplateDirWalk() {
-              conf.stylesheets = stylesheets
-                .filter(function filterFiles(file) {
-                  /* Read only CSS files. */
-                  return file.match(/.*\.css/) ? true : false;
-                })
-                .reduce(function(prev, current, index, acc) {
-                  var cssPath = path.win32.basename(current);
-                  return (prev += '<link rel="stylesheet" href="' + cssPath + '">');
-                }, '');
+              const context = {
+                ...conf,
+                stylesheets: stylesheets
+                  .filter(function filterFiles (file) {
+                    /* Read only CSS files. */
+                    return file.match(/.*\.css/) ? true : false;
+                  })
+                  .reduce(function (prev, current, index, acc) {
+                    var cssPath = path.win32.basename(current);
+                    return (prev += '<link rel="stylesheet" href="' + cssPath + '">');
+                  }, '')
+              }
 
               options
                 .src([cwd + '/**/*.html', '!' + cwd + '/**/*.inc.html'])
                 .pipe(
-                  preprocess({
-                    context: conf
-                  })
+                  preprocess({ context })
                 )
                 .pipe(inlineimg())
                 .pipe(
@@ -83,12 +85,12 @@ function buildTask(options) {
         });
       }
 
-      /** Clean up & then read 'src' to generate templates (build entry point). */
-      del(options.dist)
+      /* Clean up & then read 'src' to generate templates (build entry point). */
+      return del(options.dist)
         .then(function buildStart() {
           /**
            * Loop through dirs and load their conf files.
-           * Promisify all 'makeTemplate' calls and when resolved, make a call to the task (`cb`) to let gulp know we're done.
+           * Promisify all 'makeTemplate' calls and when resolved, let gulp know we're done.
            */
           var files = [];
           var promises = [];
@@ -110,7 +112,7 @@ function buildTask(options) {
             promises.push(makeTemplates(dir, confItems));
           });
 
-          Q.all(promises);
+          Promise.all(promises);
         })
         .then(() => done())
         .catch((err) => console.log(err));
