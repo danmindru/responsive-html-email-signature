@@ -1,12 +1,7 @@
 const gulp = require('gulp');
 const plumber = require('gulp-plumber');
 
-const {
-  SOURCE,
-  DIST,
-  WORKING_DIR,
-  CONFIGURATION_FILE
-} = require('./constants');
+const { SOURCE, DIST, WORKING_DIR, CONFIGURATION_FILE } = require('./constants');
 
 const options = {
   source: SOURCE,
@@ -27,13 +22,11 @@ require('./tasks/less')(options);
 require('./tasks/lint')(options);
 require('./tasks/postcss')(options);
 require('./tasks/sass')(options);
+require('./tasks/check-for-missing')(options);
 require('./tasks/check-deps')(options);
 
 /* Runs the entire pipeline once. */
-gulp.task(
-  'run-pipeline',
-  gulp.series('dupe', 'less', 'sass', 'postcss', 'lint', 'build')
-);
+gulp.task('run-pipeline', gulp.series('dupe', 'less', 'sass', 'postcss', 'lint', 'build', 'check-for-missing'));
 
 /* By default templates will be built into '/dist'. */
 gulp.task(
