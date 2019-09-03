@@ -24,11 +24,14 @@ const lint = require('./tasks/lint')(options);
 const postcss = require('./tasks/postcss')(options);
 const sass = require('./tasks/sass')(options);
 
-/* By default templates will be built into '/dist' */
+/* Runs the entire pipeline once. */
+gulp.task('run-pipeline', gulp.series('dupe', 'less', 'sass', 'postcss', 'lint', 'build'));
+
+/* By default templates will be built into '/dist'. */
 gulp.task(
   'default',
   gulp.series(
-    ('dupe', 'less', 'sass', 'postcss', 'lint', 'build'),
+    'run-pipeline',
     () => {
       /* gulp will watch for changes in '/templates'. */
       gulp.watch(
@@ -40,7 +43,7 @@ gulp.task(
           options.source + '/**/conf.json'
         ],
         { delay: 500 },
-        gulp.series('dupe', 'less', 'sass', 'postcss', 'lint', 'build')
+        gulp.series('run-pipeline')
       )
     }
   )
