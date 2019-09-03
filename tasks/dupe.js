@@ -1,10 +1,8 @@
-'use strict';
+const gulp = require('gulp');
+const del = require('del');
 
-const gulp = require('gulp'),
-    del = require('del');
-
-function dupeTask(options){
-  gulp.task('dupe', function(){
+function dupeTask(options) {
+  gulp.task('dupe', function() {
     del.sync([options.workingDir]);
 
     return options

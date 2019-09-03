@@ -28,7 +28,7 @@
     "deploy": "npm run test && cp -r dist demo && git push origin `git subtree split --prefix demo develop`:gh-pages --force",
     "test": "npm run once && node ./node_modules/.bin/ava",
     "format": "prettier {tasks,tests}/**/*.js gulpfile.js .eslintrc.js --write",
-    "lint": "eslint ./**/*.js gulpfile.js --fix"
+    "lint": "eslint ./**/*.js gulpfile.js"
   },
   "dependencies": {
     "autoprefixer": "^9.6.1",
@@ -57,13 +57,14 @@
   "devDependencies": {
     "ava": "^2.3.0",
     "eslint": "^6.3.0",
+    "eslint-config-prettier": "^6.2.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^9.2.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^3.0.5",
-    "prettier": "^1.18.2",
+    "prettier": "1.18.2",
     "pretty-quick": "^1.11.1"
   },
   "browserslist": [
