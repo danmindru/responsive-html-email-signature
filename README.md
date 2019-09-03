@@ -19,11 +19,11 @@ Here are some examples:
 ## Getting started
 - Clone repo `git clone https://github.com/danmindru/responsive-html-email-signature.git`
 - Run `npm install`
-- Run `gulp` to generate templates from configuration (one time)
+- Run `npm start` to generate templates from configuration (one time)
 
 ### Customizing templates
 - Edit files in */templates*
-- Run `gulp watch` to watch templates and re-generate when changed
+- Run `npm start` to watch templates and re-generate when changed
 - Open files from `./dist` in your fav browser to check them out
 
 > When you're done, check out [how to add them to your email client of choice](#usage-with-different-email-clients) if in doubt.
@@ -51,7 +51,7 @@ Writing HTML emails & email signatures sucks. Let's make it easier. We can't fix
 ### Installing
 ```bash
 $ npm install
-$ gulp # or npm run create
+$ npm start # or `npm run once` to only generate templates without watching
 # By default, HTML & CSS files in './templates' will be watched for changes
 ```
 
@@ -243,3 +243,11 @@ Unfortnately, Outlook 2010 client dosen't support HTML file import features for 
 
 > **NB**: base 64 will not be shown on Outlook 2010 client. So, I recommend to use external url if you want to use images.
 
+
+## Other commands
+
+### `npm run test`
+Runs tests once.
+
+### `npm run once`
+Creates templates and exits; does not watch files.
