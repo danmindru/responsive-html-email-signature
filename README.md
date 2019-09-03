@@ -19,11 +19,10 @@ Here are some examples:
 ## Getting started
 - Clone repo `git clone https://github.com/danmindru/responsive-html-email-signature.git`
 - Run `npm install`
-- Run `npm start` to generate templates from configuration (one time)
+- Run `npm start` to generate templates from configuration. This will continue to watch your files and re-make the template until you exit.
 
 ### Customizing templates
 - Edit files in */templates*
-- Run `npm start` to watch templates and re-generate when changed
 - Open files from `./dist` in your fav browser to check them out
 
 > When you're done, check out [how to add them to your email client of choice](#usage-with-different-email-clients) if in doubt.
@@ -44,18 +43,17 @@ Writing HTML emails & email signatures sucks. Let's make it easier. We can't fix
 - [x] supports LESS / SASS / PostCSS
 - [x] autoprefixer, so you don't have to worry about your `-moz-`s or `-webkit-`s
 
-**Some mail clients don't support them, so an external URL might be a good idea. Also, some clients might complain about the size, so keep an eye out.*
+**Some mail clients might have [hard limits](https://support.google.com/a/answer/176652?hl=en) regarding the email size, so don't include large images if possible. If you need to, use a URL instead and host the image somewhere else.*
 
 
 ## Docs
 ### Installing
 ```bash
 $ npm install
-$ npm start # or `npm run once` to only generate templates without watching
-# By default, HTML & CSS files in './templates' will be watched for changes
+$ npm start # By default, templates will be created in `./dist` and HTML & CSS files in './templates' will be watched for changes.
 ```
 
-> Note: works well with node v10+. Earlier versions might also work.
+> Note: works well with node v10+. Earlier and later versions might also work.
 
 ### Configuring
 To make a basic email from existing templates, you only have to edit the `conf.json` file in each template.
@@ -76,7 +74,7 @@ For example, the dark template accepts the following:
 ```
 
 ### Generating multiple emails from the same config (for your colleagues too!)
-Use an array instead of object in `conf.json`, having multiple configs like the one above:
+To generate multiple templates, use an array instead of an object in `conf.json`, like so:
 ```json
 [
   {...conf1},
@@ -92,7 +90,16 @@ Add any variable to the configuration file and use it in HTML like so:
 <p><!-- @echo yourCustomVariable --></p>
 ```
 
-> NB: config variables accept HTML.
+Where the configuration contains:
+
+```json
+{
+  yourCustomVariable: "Custom!"
+}
+```
+
+> NB: config variables also accept HTML. That's useful for including links.
+
 
 ### Adding CSS & pre-processing
 Any number of CSS, SASS or LESS files in a template directory & they will be automatically processed & inlined into the files outputed in `./dist`.
@@ -100,26 +107,26 @@ Any number of CSS, SASS or LESS files in a template directory & they will be aut
 
 ### Multiple emails in the same template
 Templates can contain multiple HTML files from which to build emails. For example, the dark template has `signature.html` and `signature-reply.html`, which is a simpler version.
-
 Each HTML file will be treated as an email template, except for `*.inc.html`. See below ⬇️
 
 
-### Partials (*.inc.html)
-If you indeed have multiple emails in the same templates, you can be sure some of the HTML repeats.
+### Using partials (*.inc.html)
+By naming files with `*.inc.html`, they become partials. Partials will not be treated as templates (ignored), but they can be included in any HTML template using a `@include` HTML comment.
 
-Luckily, partials can be used for common parts (i.e. headers, footers).
-
-Partials *will not* be treated as an email template, but ignored when built. They can however be included in other HTML files, like so:
 ```html
 <section>
 <!-- @include footer.inc.html -->
 </section
 ```
 
+Partials are useful if you have bits of HTML that repeat, like headers, footers, etc.
+
+
 ## Template structure (examples)
+There are no rules regarding how to structure templates, but it's a good idea to create directories for a template group. <br/>
 There are 2 examples of template structures, one for the `light` email template and one for the `dark` one.
 
-Here's how the dark one looks:
+Here's how the dark one is structured:
 ```bash
 ./templates
 ├── dark
@@ -133,7 +140,7 @@ Here's how the dark one looks:
     ├── signature-reply.html      # Simplified signature (loads head)
 ```
 
-Here's how the light one looks:
+Here's how the light one is structured:
 ```bash
 ./templates
 ├── light
@@ -147,8 +154,6 @@ Here's how the light one looks:
     ├── signature.html            # Full signature (loads head/footer)
     ├── signature-reply.html      # Simplified signature (loads head)
 ```
-
-Files are included via [gulp-preprocess](https://www.npmjs.com/package/gulp-preprocess).
 
 There's one convention you have to keep in mind: `all files that you wish to include should follow the *.inc.html format`. The gulp task ignores `*.inc.html` files, but will try to process & create email templates from all `.html` files.
 
