@@ -112,7 +112,7 @@ Each HTML file will be treated as an email template, except for `*.inc.html`. Se
 
 
 ### Using partials (*.inc.html)
-By naming files with `*.inc.html`, they become partials. Partials will not be treated as templates (ignored), but they can be included in any HTML template using a `@include` HTML comment.
+By naming files with `*.inc.html`, they become partials. Partials will not be treated as templates (ignored), but they can be included in any HTML template using the `@include` HTML comment.
 
 ```html
 <section>
