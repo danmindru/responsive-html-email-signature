@@ -18,13 +18,13 @@ jobs:
     - name: Use Node.js ${{ matrix.node_version }}
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node_version }}
+        node_version: ${{ matrix.node_version }}
 
     - name: npm install & test
       run: |
         npm -v
         node -v
-        npm install --unsafe-perm
-        npm test
+        npm install
+        npm run e2e-test
       env:
         CI: true
