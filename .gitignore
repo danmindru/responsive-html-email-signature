@@ -4,3 +4,4 @@
 .DS_Store
 /dist
 IDEAS.md
+npm_debug.log
