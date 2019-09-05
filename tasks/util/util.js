@@ -1,7 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const klaw = require('klaw');
+const chalk = require('chalk');
 
+// todo test
 /**
  * Given a directory, scans all directories in it (not deep) and returns found config items.
  *
@@ -16,7 +18,7 @@ const getConfigsForDir = (rootDir, configFileName) => {
 
       /** Exit with warn if no configuration file found. */
       if (!fs.existsSync(path.resolve(rootDir, confPath))) {
-        console.warn(`Missing configuration in "${dir}". Did you remember to create "${dir}/${configFileName}"?`);
+        self.log.warn(`Missing configuration in "${dir}". Did you remember to create "${dir}/${configFileName}"?`);
         return false;
       }
 
@@ -41,8 +43,11 @@ const getConfigsForDir = (rootDir, configFileName) => {
     .filter(config => config);
 };
 
+// todo test
 /**
  * Given a directory, gets all file paths in it.
+ *
+ * @param { string } dir Dir to get files paths for.
  */
 const getFilePathsForDir = dir => {
   const files = [];
@@ -63,7 +68,24 @@ const getFilePathsForDir = dir => {
   });
 };
 
-module.exports = {
+const log = {
+  warn: (...messages) => {
+    console.warn('🔵 ', chalk.yellow(messages));
+  },
+
+  log: (...messages) => {
+    console.log('🔘 ', chalk.gray(messages));
+  },
+
+  error: (...messages) => {
+    console.error('🔴 ', chalk.red(messages));
+  }
+};
+
+const self = {
+  log,
   getConfigsForDir,
   getFilePathsForDir
 };
+
+module.exports = self;
