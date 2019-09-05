@@ -58,7 +58,7 @@ function buildTask(options) {
               return path;
             })
           )
-          .pipe(gulp.dest(options.dist));
+          .pipe(gulp.dest(options.distDir));
       });
     }
 
@@ -66,7 +66,7 @@ function buildTask(options) {
      * Clean up & then read from workingDir to generate templates.
      * For each found config, a template group will be generated through `makeTemplates`.
      */
-    return del(options.dist)
+    return del(options.distDir)
       .then(() => {
         /**
          * Loop through dirs and load their conf files.

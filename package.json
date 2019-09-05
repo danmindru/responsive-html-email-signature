@@ -26,12 +26,13 @@
     "start": "gulp",
     "once": "gulp run-pipeline",
     "deploy": "npm run test && cp -r dist demo && git push origin `git subtree split --prefix demo develop`:gh-pages --force",
-    "test": "npm run once && node ./node_modules/.bin/ava",
+    "e2e-test": "npm run once && node ./node_modules/.bin/ava",
     "format": "prettier {tasks,tests}/**/*.js gulpfile.js .eslintrc.js --write",
     "lint": "eslint ./**/*.js gulpfile.js"
   },
   "dependencies": {
     "autoprefixer": "^9.6.1",
+    "chalk": "^2.4.2",
     "del": "^5.1.0",
     "graceful-fs": "^4.2.2",
     "gulp": "^4.0.2",
