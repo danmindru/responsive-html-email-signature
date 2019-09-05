@@ -6,7 +6,7 @@ jobs:
   test:
     name: Test on node ${{ matrix.node_version }} and ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-    
+
     strategy:
       matrix:
         node_version: [9, 10, 11, 12]
@@ -18,10 +18,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node_version: ${{ matrix.node_version }}
-        
+
     - name: npm install & test
       run: |
         npm install
-        npm test
+        npm run e2e-test
       env:
         CI: true
