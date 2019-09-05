@@ -73,7 +73,7 @@
   ],
   "husky": {
     "hooks": {
-      "pre-push": "npm test",
+      "pre-push": "npm run e2e-test",
       "pre-commit": "npm run lint && ./node_modules/.bin/pretty-quick --staged --pattern ./**/*.js"
     }
   }
