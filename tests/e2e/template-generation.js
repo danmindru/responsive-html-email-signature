@@ -1,5 +1,4 @@
 const test = require('ava');
-const path = require('path');
 const { readFileSync } = require('../util');
 
 test('dark signature output', async t => {
