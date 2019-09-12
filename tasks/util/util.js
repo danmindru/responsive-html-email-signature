@@ -43,7 +43,6 @@ const getConfigsForDir = (rootDir, configFileName) => {
     .filter(config => config);
 };
 
-// todo test
 /**
  * Given a directory, gets all file paths in it.
  *
@@ -68,6 +67,30 @@ const getFilePathsForDir = dir => {
   });
 };
 
+/**
+ * Gets an array of html files in a filelist.
+ *
+ * @param { Array } filelist
+ */
+const getHtmlTemplatesFromFilelist = filelist => {
+  return Promise.all(
+    filelist
+      .filter(file => file.match(/.*\.html/) || file.match(/.*\.inc*\.html/))
+      .map(
+        htmlTemplate =>
+          new Promise((resolve, reject) => {
+            fs.readFile(htmlTemplate, 'utf8', (error, data) => {
+              if (error) {
+                reject(error);
+              }
+
+              resolve(data);
+            });
+          })
+      )
+  );
+};
+
 const log = {
   warn: (...messages) => {
     console.warn('🔵 ', chalk.yellow(messages));
@@ -85,7 +108,8 @@ const log = {
 const self = {
   log,
   getConfigsForDir,
-  getFilePathsForDir
+  getFilePathsForDir,
+  getHtmlTemplatesFromFilelist
 };
 
 module.exports = self;
