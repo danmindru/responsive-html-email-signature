@@ -25,6 +25,6 @@ jobs:
         npm -v
         node -v
         npm install
-        npm run e2e-test
+        npm run test
       env:
         CI: true

@@ -91,6 +91,20 @@ const getHtmlTemplatesFromFilelist = filelist => {
   );
 };
 
+/**
+ * Gets an array of css link tags from a filelist (if css files are in the filelist).
+ *
+ * @param { Array } filelist
+ */
+const getCssLinkTagsFromFilelist = filelist => {
+  return filelist
+    .filter(file => !!file.match(/.*\.css/)) // Read only CSS files.
+    .reduce((acc, cur) => {
+      const cssPath = path.win32.basename(cur);
+      return (acc += '<link rel="stylesheet" href="' + cssPath + '">');
+    }, '');
+};
+
 const log = {
   warn: (...messages) => {
     console.warn('🔵 ', chalk.yellow(messages));
@@ -109,7 +123,8 @@ const self = {
   log,
   getConfigsForDir,
   getFilePathsForDir,
-  getHtmlTemplatesFromFilelist
+  getHtmlTemplatesFromFilelist,
+  getCssLinkTagsFromFilelist
 };
 
 module.exports = self;

@@ -6,8 +6,7 @@ const preprocess = require('gulp-preprocess');
 const rename = require('gulp-rename');
 const del = require('del');
 const inlineimg = require('gulp-inline-images-no-http');
-const path = require('path');
-const { getConfigsForDir, getFilePathsForDir } = require('./util/util');
+const { getConfigsForDir, getFilePathsForDir, getCssLinkTagsFromFilelist } = require('./util/util');
 
 function buildTask(options) {
   // Requires: 'dupe', 'less', 'sass', 'postcss', 'lint'.
@@ -29,12 +28,7 @@ function buildTask(options) {
          */
         const files = await getFilePathsForDir(cwd);
         const context = Object.assign(conf, {
-          stylesheets: files
-            .filter(file => !!file.match(/.*\.css/)) // Read only CSS files.
-            .reduce((acc, cur) => {
-              const cssPath = path.win32.basename(cur);
-              return (acc += '<link rel="stylesheet" href="' + cssPath + '">');
-            }, '')
+          stylesheets: getCssLinkTagsFromFilelist(files)
         });
 
         return options
