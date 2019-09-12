@@ -26,7 +26,8 @@
     "start": "node ./node_modules/.bin/gulp",
     "once": "node ./node_modules/.bin/gulp run-pipeline",
     "deploy": "npm run test && cp -r dist demo && git push origin `git subtree split --prefix demo develop`:gh-pages --force",
-    "e2e-test": "npm run once && node ./node_modules/.bin/ava",
+    "test": "npm run once && node ./node_modules/.bin/ava",
+    "test:watch": "npm run once && node ./node_modules/.bin/ava --watch",
     "format": "prettier {tasks,tests}/**/*.js gulpfile.js .eslintrc.js --write",
     "lint": "eslint ./**/*.js gulpfile.js"
   },
@@ -73,8 +74,13 @@
   ],
   "husky": {
     "hooks": {
-      "pre-push": "npm run e2e-test",
+      "pre-push": "npm run test",
       "pre-commit": "npm run lint && ./node_modules/.bin/pretty-quick --staged --pattern ./**/*.js"
     }
+  },
+  "ava": {
+    "helpers": [
+			"**/util.js"
+		]
   }
 }
