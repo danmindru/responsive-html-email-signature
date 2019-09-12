@@ -1,8 +1,6 @@
 const test = require('ava');
-const fs = require('fs');
 const path = require('path');
-
-const readFileSync = path => fs.readFileSync(('../', path), 'utf8');
+const { readFileSync } = require('../util');
 
 test('dark signature output', async t => {
   const expected = readFileSync('tests/sample/dark/signature-dark.html');
