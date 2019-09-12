@@ -33,6 +33,12 @@ const outputWarningsForUnusedItems = (unusedItems, configs) => {
   });
 };
 
+/**
+ * In a directory, checks for unused configs.
+ *
+ * @param { string } rootDir
+ * @param { Array } configs Array of configs.
+ */
 const checkForUnusedItemsInConfigs = (rootDir, configs) => {
   return Promise.all(
     configs.map(async ({ dir, confItems }) => {
