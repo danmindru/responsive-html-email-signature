@@ -1,5 +1,5 @@
 const fs = require('fs');
 
 module.exports = {
- readFileSync: path => fs.readFileSync(('./', path), 'utf8')
-}
+  readFileSync: path => fs.readFileSync(('./', path), 'utf8')
+};
