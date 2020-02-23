@@ -23,12 +23,13 @@
   },
   "homepage": "https://github.com/danmindru/responsive-html-email-signature#readme",
   "scripts": {
-    "start": "gulp",
-    "once": "gulp run-pipeline",
+    "start": "node ./node_modules/.bin/gulp",
+    "once": "node ./node_modules/.bin/gulp run-pipeline",
     "deploy": "npm run test && cp -r dist demo && git push origin `git subtree split --prefix demo develop`:gh-pages --force",
     "test": "npm run once && node ./node_modules/.bin/ava",
-    "format": "prettier {tasks,tests}/**/*.js gulpfile.js .eslintrc.js --write",
-    "lint": "eslint ./**/*.js gulpfile.js --fix"
+    "test:watch": "npm run once && node ./node_modules/.bin/ava --watch",
+    "format": "node ./node_modules/.bin/prettier {tasks,tests}/**/*.js gulpfile.js .eslintrc.js --write",
+    "lint": "node ./node_modules/.bin/eslint ./**/*.js gulpfile.js"
   },
   "dependencies": {
     "autoprefixer": "^9.7.4",
