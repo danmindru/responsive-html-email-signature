@@ -68,6 +68,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "gulp-cli": "^2.2.0",
     "husky": "^4.2.3",
+    "opencollective-postinstall": "^2.0.2",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1"
   },
