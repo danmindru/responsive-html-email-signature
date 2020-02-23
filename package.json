@@ -46,7 +46,7 @@
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
     "gulp-preprocess": "^3.0.3",
-    "gulp-rename": "^2.0.0",
+    "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "klaw": "^3.0.0",
     "node-sass": "^4.13.1"
