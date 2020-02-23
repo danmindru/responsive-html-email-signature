@@ -64,7 +64,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "gulp-cli": "^2.2.0",
-    "husky": "^4.2.3",
+    "husky": "^3.0.5",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1"
   },
