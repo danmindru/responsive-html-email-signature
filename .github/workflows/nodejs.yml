@@ -23,7 +23,7 @@ jobs:
       run: |
         npm -v
         node -v
-        npm install
+        npm install --unsafe-perm
         npm test
       env:
         CI: true
