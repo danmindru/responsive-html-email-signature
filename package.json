@@ -1,6 +1,6 @@
 {
   "name": "responsive-html-email-signature",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "Responsive template for emails & email signatures.",
   "main": "index.js",
   "repository": {
@@ -23,13 +23,15 @@
   },
   "homepage": "https://github.com/danmindru/responsive-html-email-signature#readme",
   "scripts": {
-    "start": "node ./node_modules/.bin/gulp",
-    "once": "node ./node_modules/.bin/gulp run-pipeline",
+    "start": "./node_modules/.bin/gulp",
+    "once": "./node_modules/.bin/gulp run-pipeline",
     "deploy": "npm run test && cp -r dist demo && git push origin `git subtree split --prefix demo develop`:gh-pages --force",
-    "test": "npm run once && node ./node_modules/.bin/ava",
-    "test:watch": "npm run once && node ./node_modules/.bin/ava --watch",
-    "format": "node ./node_modules/.bin/prettier {tasks,tests}/**/*.js gulpfile.js .eslintrc.js --write",
-    "lint": "node ./node_modules/.bin/eslint ./**/*.js gulpfile.js"
+    "test": "npm run once && npm run _test",
+    "test:watch": "npm run once && npm run _test:watch",
+    "format": "./node_modules/.bin/prettier {tasks,tests}/**/*.js gulpfile.js .eslintrc.js --write",
+    "lint": "./node_modules/.bin/eslint ./**/*.js gulpfile.js",
+    "_test": "./node_modules/.bin/ava",
+    "_test:watch": "./node_modules/.bin/ava --watch"
   },
   "dependencies": {
     "autoprefixer": "^9.6.1",
