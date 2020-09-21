@@ -23,7 +23,6 @@ require('./tasks/lint')(options);
 require('./tasks/postcss')(options);
 require('./tasks/sass')(options);
 require('./tasks/check-for-unused').checkForUnusedTask(options);
-require('./tasks/check-deps')(options);
 
 /* Runs the entire pipeline once. */
 gulp.task(
