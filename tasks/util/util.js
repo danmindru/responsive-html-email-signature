@@ -25,8 +25,9 @@ const getConfigsForDir = (rootDir, configFileName) => {
       let current = null;
       let confItems;
 
-      delete require.cache[require.resolve(rootDir, confPath)]; // NB: For 'watch' to properly work, the cache needs to be deleted before each require.
-      current = require(path.resolve(rootDir, confPath));
+      const resolvedPath = path.resolve(rootDir, confPath);
+      delete require.cache[resolvedPath]; // NB: For 'watch' to properly work, the cache needs to be deleted before each require.
+      current = require(resolvedPath);
 
       // Handle single objects or arrays of configs.
       if (current && current.length) {
