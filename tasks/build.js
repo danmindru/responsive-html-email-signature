@@ -5,7 +5,7 @@ const minifyInline = require('gulp-minify-inline');
 const preprocess = require('gulp-preprocess');
 const rename = require('gulp-rename');
 const del = require('del');
-const inlineimg = require('gulp-inline-images-no-http');
+const { inlineimg } = require('./check-for-image-url');
 const { getConfigsForDir, getFilePathsForDir, getCssLinkTagsFromFilelist } = require('./util/util');
 
 function buildTask(options) {
