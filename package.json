@@ -34,7 +34,6 @@
     "_test:watch": "./node_modules/.bin/ava --watch"
   },
   "dependencies": {
-    "-": "^0.0.1",
     "autoprefixer": "^9.6.1",
     "chalk": "^2.4.2",
     "cheerio": "^0.22.0",
