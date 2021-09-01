@@ -8,15 +8,17 @@ const PluginError = require('plugin-error');
 const through = require('through2');
 const cheerio = require('cheerio');
 
+const { log } = require('./util/util');
+
 const PLUGIN_NAME = 'gulp-inline-images';
 const MIME_TYPE_REGEX = /.+\/([^\s]*)/;
 const INLINE_ATTR = 'inline';
 const NOT_INLINE_ATTR = `!${INLINE_ATTR}`;
 
-function inlineimg(options = {}) {
-  var selector = options.selector || 'img[src]';
-  var attribute = options.attribute || 'src';
-  var getHTTP = options.getHTTP || false;
+function inlineImg(options = {}) {
+  const selector = options.selector || 'img[src]';
+  const attribute = options.attribute || 'src';
+  const getHTTP = options.getHTTP || false;
 
   return through.obj(function(file, encoding, callback) {
     if (file.isStream()) {
@@ -25,29 +27,30 @@ function inlineimg(options = {}) {
     }
 
     if (file.isBuffer()) {
-      var contents = file.contents.toString(encoding);
+      const contents = file.contents.toString(encoding);
       // Load it into cheerio's virtual DOM for easy manipulation
-      var $ = cheerio.load(contents);
-      var inline_flag = $(`img[${INLINE_ATTR}]`);
+      const $ = cheerio.load(contents);
+      const inlineFlag = $(`img[${INLINE_ATTR}]`);
       // If images with an inline attr are found that is the selection we want
-      var img_tags = inline_flag.length ? inline_flag : $(selector);
-      var count = 0;
+      const imgTags = inlineFlag.length ? inlineFlag : $(selector);
+      let count = 0;
 
-      img_tags.each(function() {
-        var $img = $(this);
-        var src = $img.attr(attribute);
+      imgTags.each(function() {
+        const $img = $(this);
+        const src = $img.attr(attribute);
+
         // Save the file format from the extension
-        var ext_format = path.extname(src).substr(1);
+        const extFormat = path.extname(src).substr(1);
 
-        // If inline_flag tags were found we want to remove the inline tag
-        if (inline_flag.length) {
+        // If inlineFlag tags were found we want to remove the inline tag
+        if (inlineFlag.length) {
           $img.removeAttr(INLINE_ATTR);
         }
 
         // Find !inline attribute
-        var not_inline_flag = $img.attr(NOT_INLINE_ATTR);
+        const notInlineFlag = $img.attr(NOT_INLINE_ATTR);
 
-        if (typeof not_inline_flag !== typeof undefined && not_inline_flag !== false) {
+        if (typeof notInlineFlag !== typeof undefined && notInlineFlag !== false) {
           // Remove the tag and don't process this file
           return $img.removeAttr(NOT_INLINE_ATTR);
         }
@@ -55,18 +58,18 @@ function inlineimg(options = {}) {
         // Count async ops
         count++;
 
-        getSrcBase64(options.basedir || file.base, getHTTP, src, function(err, result, res_format, skip_formatting) {
+        getSrcBase64(options.basedir || file.base, getHTTP, src, (err, result, resFormat, skipFormatting) => {
           if (err) {
-            console.error(err);
+            log.error(err);
           } else {
             // Need a format in and a result for this to work
-            if (!skip_formatting) {
-              if (result && (ext_format || res_format)) {
-                $img.attr('src', `data:image/${ext_format};base64,${result}`);
+            if (!skipFormatting) {
+              if (result && (extFormat || resFormat)) {
+                $img.attr('src', `data:image/${extFormat};base64,${result}`);
               } else {
                 $img.attr('src', ``);
                 $img.attr('alt', `Image not found, Please check Url`);
-                console.error(`Failed to identify format of ${src}!`);
+                log.warn(`Failed to read image. Check the format of ${src}.`);
               }
             }
 
@@ -79,7 +82,7 @@ function inlineimg(options = {}) {
       });
 
       // If no files are processing we don't need to wait as none were ever started
-      if (!img_tags.length) {
+      if (!imgTags.length) {
         file.contents = Buffer.from($.html());
         callback(null, file);
       }
@@ -89,9 +92,9 @@ function inlineimg(options = {}) {
 
 function getHTTPBase64(url, callback) {
   // Get applicable library
-  var lib = url.startsWith('https') ? https : http;
+  const lib = url.startsWith('https') ? https : http;
   // Initiate a git request to our URL
-  var req = lib.get(url, res => {
+  const req = lib.get(url, res => {
     // Check for redirect
     if (res.statusCode >= 301 && res.statusCode < 400 && res.headers.location) {
       // Redirect
@@ -102,14 +105,16 @@ function getHTTPBase64(url, callback) {
       return callback(new Error('Failed to load page, status code: ' + res.statusCode));
     }
     // Get file format
-    var format;
+    let format;
     if (res.headers['content-type']) {
-      var matches = res.headers['content-type'].match(MIME_TYPE_REGEX);
-      if (matches) format = matches[1];
+      const matches = res.headers['content-type'].match(MIME_TYPE_REGEX);
+      if (matches) {
+        format = matches[1];
+      }
     }
 
     // Create an empty buffer to store the body in
-    var body = Buffer.from([]);
+    let body = Buffer.from([]);
 
     // Append each chunk to the body
     res.on('data', chunk => (body = Buffer.concat([body, chunk])));
@@ -123,11 +128,12 @@ function getHTTPBase64(url, callback) {
 }
 
 function getSrcBase64(base, getHTTP, src, callback) {
+  // TODO: @deprecated — since v11.0.0 url.parse should be replaced with url.URL() ctor
   if (!url.parse(src).hostname) {
     // Get local file
-    var file_path = path.join(base, src);
-    if (fs.existsSync(file_path)) {
-      fs.readFile(file_path, 'base64', callback);
+    const filePath = path.join(base, src);
+    if (fs.existsSync(filePath)) {
+      fs.readFile(filePath, 'base64', callback);
     } else {
       callback(null);
     }
@@ -141,6 +147,8 @@ function getSrcBase64(base, getHTTP, src, callback) {
   }
 }
 
-module.exports.inlineimg = inlineimg;
-module.exports.getHTTPBase64 = getHTTPBase64;
-module.exports.getSrcBase64 = getSrcBase64;
+module.exports = {
+  inlineImg,
+  getHTTPBase64,
+  getSrcBase64
+};
