@@ -30,7 +30,7 @@ const outputWarningsForUnusedItems = (unusedItems, configs) => {
     unusedInConfigs.forEach(unusedInConfItems => {
       const unusedItemsToLog = unusedInConfItems.filter(item => item !== `${OUTPUT_KEYWORD} id`);
 
-      if (unusedItemsToLog.length) {
+      if (unusedItemsToLog.length && unusedItemsToLog != "@echo isRemoteUrl") {
         log.warn(
           `${unusedItemsToLog.length} unused properties in ${dir}: ${unusedItemsToLog
             .reduce((acc, cur) => (acc ? `${acc}, ${chalk.white(cur)}` : chalk.white(cur)), '')

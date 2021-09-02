@@ -34,7 +34,7 @@ function buildTask(options) {
         return options
           .src([cwd + '/**/*.html', '!' + cwd + '/**/*.inc.html'])
           .pipe(preprocess({ context }))
-          .pipe(inlineImg())
+          .pipe(inlineImg({ getHTTP: confItems[0]["isRemoteUrl"] }))
           .pipe(
             inlineCss({
               applyTableAttributes: true,
