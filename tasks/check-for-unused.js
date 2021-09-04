@@ -28,9 +28,11 @@ const outputWarningsForUnusedItems = (unusedItems, configs) => {
     const { dir } = configs[index];
 
     unusedInConfigs.forEach(unusedInConfItems => {
-      const unusedItemsToLog = unusedInConfItems.filter(item => item !== `${OUTPUT_KEYWORD} id`);
+      const unusedItemsToLog = unusedInConfItems
+        .filter(item => item !== `${OUTPUT_KEYWORD} id`)
+        .filter(item => item !== '@echo inlineRemoteUrl');
 
-      if (unusedItemsToLog.length && unusedItemsToLog != "@echo isRemoteUrl") {
+      if (unusedItemsToLog.length) {
         log.warn(
           `${unusedItemsToLog.length} unused properties in ${dir}: ${unusedItemsToLog
             .reduce((acc, cur) => (acc ? `${acc}, ${chalk.white(cur)}` : chalk.white(cur)), '')
