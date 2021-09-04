@@ -60,6 +60,7 @@ function inlineImg(options = {}) {
 
         getSrcBase64(options.basedir || file.base, getHTTP, src, (err, result, resFormat, skipFormatting) => {
           if (err) {
+            log.warn(`Failed to load http image. Check the format of ${src}.`);
             log.error(err);
           } else {
             // Need a format in and a result for this to work
@@ -140,7 +141,7 @@ function getSrcBase64(base, getHTTP, src, callback) {
   } else {
     // Get remote file
     if (getHTTP) {
-      getHTTPBase64(src, callback);
+      return getHTTPBase64(src, callback);
     } else {
       callback(null, src, null, true);
     }

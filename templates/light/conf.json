@@ -9,6 +9,5 @@
   "contactSecondary": "<a href='https://mapurl.com'><span>Happy Steet 31, DK-8000 Aarhus C, Denmark</span></a>",
   "logoUrl": "/assets/light.png",
   "logoAlt": "light logo",
-  "website": "http://light.dk",
-  "isRemoteUrl": false
+  "website": "http://light.dk"
 }
