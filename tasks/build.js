@@ -5,7 +5,7 @@ const minifyInline = require('gulp-minify-inline');
 const preprocess = require('gulp-preprocess');
 const rename = require('gulp-rename');
 const del = require('del');
-const inlineimg = require('gulp-inline-images-no-http');
+const { inlineImg } = require('./check-for-image-url');
 const { getConfigsForDir, getFilePathsForDir, getCssLinkTagsFromFilelist } = require('./util/util');
 
 function buildTask(options) {
@@ -34,7 +34,7 @@ function buildTask(options) {
         return options
           .src([cwd + '/**/*.html', '!' + cwd + '/**/*.inc.html'])
           .pipe(preprocess({ context }))
-          .pipe(inlineimg())
+          .pipe(inlineImg({ getHTTP: confItems[0]['inlineRemoteUrl'] }))
           .pipe(
             inlineCss({
               applyTableAttributes: true,
