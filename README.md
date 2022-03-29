@@ -60,7 +60,7 @@ $ npm install
 $ npm start # By default, templates will be created in `./dist` and HTML & CSS files in './templates' will be watched for changes.
 ```
 
-> Note: works well with node v10+. Earlier and later versions might also work.
+> ⚠️ Note: tested with node versions `12-17`. Earlier and later versions might also work.
 
 ### Configuring
 
