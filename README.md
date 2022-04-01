@@ -42,7 +42,7 @@ Writing HTML emails & email signatures sucks. Let's make it easier. We can't fix
 - [x] transforms linked (`<link>`) CSS into inline styles
 - [x] embeds local `img[src]` into the template (base64).\*
 - [x] minifies the template
-- [x] ads some basic media queries for mail clients that support them
+- [x] adds some basic media queries for mail clients that support them
 - [x] can build templates from multiple sources
 - [x] watches HTML / CSS files for changes and re-builds
 - [x] supports LESS / SASS / PostCSS
@@ -111,7 +111,7 @@ Where the configuration contains:
 
 ### Adding CSS & pre-processing
 
-Any number of CSS, SASS or LESS files in a template directory & they will be automatically processed & inlined into the files outputed in `./dist`.
+Any number of CSS, SASS or LESS files in a template directory & they will be automatically processed & inlined into the files outputted in `./dist`.
 
 ### Multiple emails in the same template
 
@@ -265,7 +265,7 @@ start Signatures
 
 #### Solution 2
 
-Unfortnately, Outlook 2010 client dosen't support HTML file import features for your email template. But you can add your own signatures by simple Copy and paste like **Solution 2** above.
+Unfortunately, Outlook 2010 client doesn't support HTML file import features for your email template. But you can add your own signatures by simple Copy and paste like **Solution 2** above.
 
 - Open built html file on `/dist` folder and Ctrl A + C
 - Open Outlook 2010 and go to `File > Option > Mail > Signature`
