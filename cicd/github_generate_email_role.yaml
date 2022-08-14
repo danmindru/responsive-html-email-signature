@@ -20,7 +20,6 @@ Resources:
     Type: AWS::IAM::Role
     Properties:
       RoleName: GithubGenerateEmailRole
-      # ManagedPolicyArns: ["arn:aws:iam::aws:policy/AmazonS3FullAccess"]
       Policies:
         - PolicyName: GithubGenerateEmailRolePolicy
           PolicyDocument:

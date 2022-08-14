@@ -1,6 +1,6 @@
 #!bin/sh
 
-# for dynamic interactive creation of conf.json file
+# script for dynamic interactive creation of conf.json file
 
 # If variable not set or null, set to some exemplary defaults.
 theme="${1:-light}"
