@@ -5,5 +5,3 @@ echo | openssl s_client -servername $HOST -showcerts -connect $HOST:443 2> /dev/
   | openssl x509 -fingerprint -noout \
   | sed -e "s/.*=//" -e "s/://g" \
   | tr "ABCDEF" "abcdef"
-
-
