@@ -26,6 +26,7 @@
     "start": "./node_modules/.bin/gulp",
     "once": "./node_modules/.bin/gulp run-pipeline",
     "deploy": "npm run test && cp -r dist demo && git push origin `git subtree split --prefix demo develop`:gh-pages --force",
+    "generate:conf": "sh generate-conf.json.sh $THEME $MOBILE_PHONE_COUNTRY_CODE $MOBILE_PHONE_NUMBER $EMAIL_ADDRESS",
     "test": "npm run once && npm run _test",
     "test:watch": "npm run once && npm run _test:watch",
     "format": "./node_modules/.bin/prettier {tasks,tests}/**/*.js gulpfile.js .eslintrc.js --write",

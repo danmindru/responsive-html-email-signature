@@ -1,0 +1,47 @@
+name: Generate eMail Template
+on:
+  workflow_dispatch: 
+
+jobs:
+  generate-email-signature:
+    name: Generate eMail Signature
+    runs-on: ubuntu-latest
+    permissions:
+      # Ignore validation error - this line is necessary
+      id-token: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+      - name: Populate conf.json
+        working-directory: templates/${{ env.THEME }}
+        env:
+          EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
+          MOBILE_PHONE_COUNTRY_CODE: ${{ secrets.MOBILE_PHONE_COUNTRY_CODE }}
+          MOBILE_PHONE_NUMBER: ${{ secrets.MOBILE_PHONE_NUMBER }}
+          THEME: dark
+        run: |
+          npm run generate:conf ${{ env.THEME }}
+      - name: Install NPM and Generate Signature
+        run: |
+          npm -v
+          node -v
+          npm install
+          npm run once
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ secrets.GH_GENERATE_EMAIL_ROLE }}
+          aws-region:  eu-central-1
+      - name: Upload Signature to S3
+        env:
+          bucket_name: ${{ secrets.BUCKET_NAME }}
+          local_source_dir: './dist'
+          remote_dir: generated-email-signatures
+        run: |
+          aws s3 cp --recursive $local_source_dir s3://$bucket_name/$remote_dir
