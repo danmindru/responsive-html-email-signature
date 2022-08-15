@@ -24,27 +24,7 @@ Here are some examples:
 - Run `npm install`
 - Run `npm start` to generate templates from configuration. This will continue to watch your files and re-make the template until you exit.
 
-## Automate Signature Creation
-
-Use the Github Actions Workflow to automatically generate and store your signature in a cloud storage (e.g. S3 Bucket)
-
-1) Create the bucket to store the signature using [AWS CLI](https://aws.amazon.com/cli/): 
-
-   `aws s3 mb s3://<BUCKET_NAME>`
-
-   > *where BUCKET_NAME is the unique name of your s3 bucket*
-
-2) Deploy the role with permission to upload signature into your accounts S3 Bucket 
-
-   `aws cloudformation deploy --template-file cicd/github_generate_email_role.yaml --stack-name githubOidcGenerateEmail --capabilities CAPABILITY_NAMED_IAM`
-
-   > *details on [Github's OIDC with AWS](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services)*
-
-3) Populate the secret values `EMAIL_ADDRESS`, `MOBILE_PHONE_COUNTRY_CODE`, `BUCKET_NAME`, `MOBILE_PHONE_NUMBER`,  and `GH_GENERATE_EMAIL_ROLE` in [the repo's settings tab](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository).
-
-4) Trigger the [`generate-email-signature`](./.github/workflows/generate-email-signature.yml) workflow via [manual dispatch](https://github.blog/changelog/2020-07-06-github-actions-manual-triggers-with-workflow_dispatch/)
-
-5) Congrats! 🥳 Your signature has been uploaded. You can now download it from your S3 Bucket.
+> ####  🪄  Building templates can be automated in S3 - [get started here](#automate-signature-creation).
 
 ### Customizing templates
 
@@ -70,6 +50,7 @@ Writing HTML emails & email signatures sucks. Let's make it easier. We can't fix
 - [x] supports LESS / SASS / PostCSS
 - [x] autoprefixer, so you don't have to worry about your `-moz-`s or `-webkit-`s
 - [x] linting, checks for used template config parameters and more!
+- [x] allows automatic build & deployment of templates to S3
 
 \*_Some mail clients might have [hard limits](https://support.google.com/a/answer/176652?hl=en) regarding the email size, so don't include large images if possible. If you need to, use a URL instead and host the image somewhere else._
 
@@ -195,6 +176,29 @@ Here's how the light one is structured:
 There's one convention you have to keep in mind: `all files that you wish to include should follow the *.inc.html format`. The gulp task ignores `*.inc.html` files, but will try to process & create email templates from all `.html` files.
 
 You are of course encouraged to change the default structure for your use case.
+
+## Automate Signature Creation
+
+Use the Github Actions Workflow to automatically generate and store your signature in a cloud storage (e.g. S3 Bucket)
+
+1) Create the bucket to store the signature using [AWS CLI](https://aws.amazon.com/cli/):
+
+   `aws s3 mb s3://<BUCKET_NAME>`
+
+   > *where BUCKET_NAME is the unique name of your s3 bucket*
+
+2) Deploy the role with permission to upload signature into your accounts S3 Bucket
+
+   `aws cloudformation deploy --template-file cicd/github_generate_email_role.yaml --stack-name githubOidcGenerateEmail --capabilities CAPABILITY_NAMED_IAM`
+
+   > *details on [Github's OIDC with AWS](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services)*
+
+3) Populate the secret values `EMAIL_ADDRESS`, `MOBILE_PHONE_COUNTRY_CODE`, `BUCKET_NAME`, `MOBILE_PHONE_NUMBER`,  and `GH_GENERATE_EMAIL_ROLE` in [the repo's settings tab](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository).
+
+4) Trigger the [`generate-email-signature`](./.github/workflows/generate-email-signature.yml) workflow via [manual dispatch](https://github.blog/changelog/2020-07-06-github-actions-manual-triggers-with-workflow_dispatch/)
+
+5) Congrats! 🥳 Your signature has been uploaded. You can now download it from your S3 Bucket.
+
 
 ## Overview of the build process
 
