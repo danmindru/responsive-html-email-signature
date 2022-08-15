@@ -1,6 +1,6 @@
 name: Generate eMail Template
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
   generate-email-signature:
@@ -37,7 +37,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: ${{ secrets.GH_GENERATE_EMAIL_ROLE }}
-          aws-region:  eu-central-1
+          aws-region: ${{ secrets.AWS_REGION }}
       - name: Upload Signature to S3
         env:
           bucket_name: ${{ secrets.BUCKET_NAME }}
