@@ -1,0 +1,65 @@
+Parameters:
+  GitHubOrg:
+    Type: String
+    Default: <YourGitHubOrg||YourGitHubUsername>
+  RepoName:
+    Type: String
+    Default: <YourRepoName>
+  OIDCProviderArn:
+    Description: Arn for the GitHub OIDC Provider.
+    Default: ""
+    Type: String
+
+Conditions:
+  CreateOIDCProvider: !Equals 
+    - !Ref OIDCProviderArn
+    - ""
+
+Resources:
+  Role:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: GithubGenerateEmailRole
+      Policies:
+        - PolicyName: GithubGenerateEmailRolePolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+            - Action:
+              - s3:PutObject
+              - s3:PutObjectAcl
+              - s3:GetObject
+              - s3:GetObjectAcl
+              - s3:AbortMultipartUpload
+              Resource:
+              - arn:aws:s3:::<BucketName>
+              - arn:aws:s3:::<BucketName>/*
+              Effect: Allow
+      AssumeRolePolicyDocument:
+        Statement:
+          - Effect: Allow
+            Sid: "GithubOIDC"
+            Action: sts:AssumeRoleWithWebIdentity
+            Principal:
+              Federated: !If 
+                - CreateOIDCProvider
+                - !Ref GithubOidc
+                - !Ref OIDCProviderArn
+            Condition:
+              StringLike:
+                token.actions.githubusercontent.com:sub: !Sub repo:${GitHubOrg}/${RepoName}:*
+  
+
+  GithubOidc:
+    Type: AWS::IAM::OIDCProvider
+    Condition: CreateOIDCProvider
+    Properties:
+      Url: https://token.actions.githubusercontent.com
+      ClientIdList: 
+        - sts.amazonaws.com
+      ThumbprintList:
+        - 6938fd4d98bab03faadb97b34396831e3780aea1
+
+Outputs:
+  Role:
+    Value: !GetAtt Role.Arn 
