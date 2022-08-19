@@ -193,7 +193,7 @@ Use the Github Actions Workflow to automatically generate and store your signatu
 
    > *details on [Github's OIDC with AWS](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services)*
 
-3) Populate the secret values `EMAIL_ADDRESS`, `MOBILE_PHONE_COUNTRY_CODE`, `BUCKET_NAME`, `MOBILE_PHONE_NUMBER`,  and `GH_GENERATE_EMAIL_ROLE` in [the repo's settings tab](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository).
+3) Populate the secret values `AWS_REGION`, `EMAIL_ADDRESS`, `MOBILE_PHONE_COUNTRY_CODE`, `BUCKET_NAME`, `MOBILE_PHONE_NUMBER`,  and `GH_GENERATE_EMAIL_ROLE` in [the repo's settings tab](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository).
 
 4) Trigger the [`generate-email-signature`](./.github/workflows/generate-email-signature.yml) workflow via [manual dispatch](https://github.blog/changelog/2020-07-06-github-actions-manual-triggers-with-workflow_dispatch/)
 
