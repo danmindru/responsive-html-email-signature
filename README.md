@@ -179,7 +179,7 @@ You are of course encouraged to change the default structure for your use case.
 
 ## Automate Signature Creation
 
-Use the Github Actions Workflow to automatically generate and store your signature in a cloud storage (e.g. S3 Bucket)
+Use the Github Actions Workflow to automatically generate and store your signature in a cloud storage (e.g. S3 Bucket). [See sample Github action](https://github.com/danmindru/responsive-html-email-signature/blob/master/.github/workflows/generate-email-signature.yml).
 
 1) Create the bucket to store the signature using [AWS CLI](https://aws.amazon.com/cli/):
 
