@@ -32,7 +32,7 @@ Here are some examples:
 - Open files from `./dist` in your fav browser to check them out
 
 > When you're done, check out [how to add them to your email client of choice](#usage-with-different-email-clients) if in doubt.
-
+ 
 ## Motivation
 
 Writing HTML emails & email signatures sucks. Let's make it easier. We can't fix all email clients, but we can surely make our lives easier with some automation. <br/>
@@ -53,6 +53,13 @@ Writing HTML emails & email signatures sucks. Let's make it easier. We can't fix
 - [x] allows automatic build & deployment of templates to S3
 
 \*_Some mail clients might have [hard limits](https://support.google.com/a/answer/176652?hl=en) regarding the email size, so don't include large images if possible. If you need to, use a URL instead and host the image somewhere else._
+
+## Building a website or blog?
+Use [Shipixen](https://shipixen.com) to generate a customized boilerplate with your branding, pages and blog - then deploy it to Vercel with 1 click.
+
+| | |
+| :- | :- |
+| <a href="https://shipixen.com" target="_blank"><img height="60px" src="https://user-images.githubusercontent.com/1515742/281071510-d5c0095d-d336-4857-ad80-d18cf65f4acb.png" alt="Shipixen Logo" /></a> <br/> <b>Shipixen</b> <br/> Create a blog & landing page in minutes. <br/> <a href="https://shipixen.com">shipixen.com</a> | <a href="https://shipixen.com" target="_blank"><img width="300px" src="https://user-images.githubusercontent.com/1515742/281077548-57b24773-3c2a-4e89-b088-cc3945d7037b.png" alt="Shipixen Logo" /></a> |
 
 ## Docs
 
